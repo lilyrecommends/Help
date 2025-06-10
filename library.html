@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LB - Library</title>
+  </head>
+  <body>
+    <div class="website">
+      <h1 style="text-align: center"><a href="links.html" style="text-decoration: none; color: inherit;">LB</a></h1>
+      <div class="topnav">
+        <a class="active" href="library.html">Library</a>
+        <a href="links.html#history">History</a>
+        <a href="links.html#teaching">Teaching</a>
+      </div>
+      <div class="main-section-container">
+        <div class="main-section">
+          <button class="collapsible">Literature</button>
+          <div class="content">
+            <table class="library-table" data-section="literature">
+              <thead>
+                <tr>
+                  <th data-sort="date">Date <span class="sort-icon"></span></th>
+                  <th data-sort="author">Author <span class="sort-icon"></span></th>
+                  <th data-sort="title">Title <span class="sort-icon"></span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1923</td>
+                  <td>Scholes, Percy A.</td>
+                  <td>The Listener's History of Music</td>
+                </tr>
+                <tr>
+                  <td>1965</td>
+                  <td>Spiegl, Fritz</td>
+                  <td>What the Papers didn't mean to say</td>
+                </tr>
+                <tr>
+                  <td>1917</td>
+                  <td>Mackey, Albert G.</td>
+                  <td>Encyclopedia of Freemasonry and Its Kindred Sciences comprising the Whole Range of Arts, Sciences, and LIterature as Connected with the Institution</td>
+                </tr>
+                <tr>
+                  <td>1999</td>
+                  <td></td>
+                  <td>Quotations</td>
+                </tr>
+                <tr>
+                  <td>1964</td>
+                  <td>Jung, Carl</td>
+                  <td>Man and His Symbols</td>
+                </tr>
+                <tr>
+                  <td>1977</td>
+                  <td>Popper, Karl R.</td>
+                  <td>The Logic of Scientific Discovery</td>
+                </tr>
+                <tr>
+                  <td>1934</td>
+                  <td>Carnap, Rudolf</td>
+                  <td>Psyche Miniatures, General Series No. 63: The Unity of Science</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <button class="collapsible">Cinema</button>
+          <div class="content">
+            <table class="library-table" data-section="cinema">
+              <thead>
+                <tr>
+                  <th data-sort="date">Date <span class="sort-icon"></span></th>
+                  <th data-sort="director">Director <span class="sort-icon"></span></th>
+                  <th data-sort="title">Title <span class="sort-icon"></span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Add your cinema items here -->
+              </tbody>
+            </table>
+          </div>
+
+          <button class="collapsible">Music</button>
+          <div class="content">
+            <table class="library-table" data-section="music">
+              <thead>
+                <tr>
+                  <th data-sort="date">Date <span class="sort-icon"></span></th>
+                  <th data-sort="artist">Artist <span class="sort-icon"></span></th>
+                  <th data-sort="title">Title <span class="sort-icon"></span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Add your music items here -->
+              </tbody>
+            </table>
+          </div>
+
+          <button class="collapsible">Art</button>
+          <div class="content">
+            <table class="library-table" data-section="art">
+              <thead>
+                <tr>
+                  <th data-sort="date">Date <span class="sort-icon"></span></th>
+                  <th data-sort="artist">Artist <span class="sort-icon"></span></th>
+                  <th data-sort="title">Title <span class="sort-icon"></span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Add your art items here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Collapsible functionality
+        const collapsibles = document.getElementsByClassName("collapsible");
+        for (let i = 0; i < collapsibles.length; i++) {
+          // Set initial state to collapsed
+          collapsibles[i].classList.add("collapsed");
+          const content = collapsibles[i].nextElementSibling;
+          content.classList.add("collapsed");
+          
+          collapsibles[i].addEventListener("click", function() {
+            this.classList.toggle("collapsed");
+            const content = this.nextElementSibling;
+            content.classList.toggle("collapsed");
+          });
+        }
+
+        // Table sorting functionality
+        const tables = document.getElementsByClassName("library-table");
+        for (let table of tables) {
+          const headers = table.getElementsByTagName("th");
+          for (let header of headers) {
+            header.addEventListener("click", function() {
+              const sortBy = this.getAttribute("data-sort");
+              const tbody = table.getElementsByTagName("tbody")[0];
+              const rows = Array.from(tbody.getElementsByTagName("tr"));
+              
+              // Remove sort classes from all headers
+              Array.from(headers).forEach(h => {
+                h.classList.remove("sort-asc", "sort-desc");
+              });
+
+              // Determine sort direction
+              const isAsc = !this.classList.contains("sort-asc");
+              this.classList.toggle("sort-asc", isAsc);
+              this.classList.toggle("sort-desc", !isAsc);
+
+              // Sort rows
+              rows.sort((a, b) => {
+                const aValue = a.getElementsByTagName("td")[Array.from(headers).indexOf(this)].textContent;
+                const bValue = b.getElementsByTagName("td")[Array.from(headers).indexOf(this)].textContent;
+                
+                if (sortBy === "date") {
+                  // Sort dates
+                  return isAsc ? new Date(aValue) - new Date(bValue) : new Date(bValue) - new Date(aValue);
+                } else {
+                  // Sort text
+                  return isAsc ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+                }
+              });
+
+              // Reorder rows
+              rows.forEach(row => tbody.appendChild(row));
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html> 

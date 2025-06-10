@@ -1,0 +1,207 @@
+.website {
+  border-style: solid;
+  border-width: 100px;
+  border-color: white;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.topnav {
+  text-align: center;
+}
+.topnav a {
+  margin: 0px 50px;
+}
+#sheet {
+  display: flex;
+  flex: 1;
+  height: 500px;
+}
+.sheet-container {
+  border-style: solid;
+  border-width: max;
+  border-color: white;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex: 1;
+  height: 600px;
+}
+.standard-block {
+  padding: 10px;
+}
+.slides-container {
+  flex: 1;
+  aspect-ratio: 15/9;
+  display: flex;
+  margin: 10px;
+}
+#slide {
+  flex: 1;
+}
+a:link {
+  color: black;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 0.5px;
+}
+a:visited {
+  color: black;
+  text-decoration-line: line-through;
+}
+.main-section-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+.main-section {
+  width: 600px;
+  margin-top: 0;
+}
+/* Ensure consistent spacing for both regular and collapsible headings */
+.main-section > b {
+  margin-top: 0;
+  padding-top: 0;
+  display: block;
+  line-height: 1;
+}
+.main-section > .collapsible {
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 1;
+}
+.main-section > ul > li > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.main-section > ul > li > ul > li {
+  flex: 0 0 calc(50% - 1rem);
+  margin-bottom: 0.5rem;
+}
+
+/* Collapsible section styles */
+.collapsible {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  background: none;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collapsible::after {
+  content: '▼';
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+.collapsible.collapsed::after {
+  transform: rotate(-90deg);
+}
+
+.content {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  margin-top: 10px;
+}
+
+.content.collapsed {
+  max-height: 0;
+}
+
+/* Remove default bullet points and add custom arrow */
+.library-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.library-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Table styles */
+.library-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.library-table th {
+  text-align: left;
+  padding: 8px;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid #ddd;
+  vertical-align: bottom;
+  line-height: 1;
+}
+
+.library-table th:hover {
+  background-color: #f5f5f5;
+}
+
+.library-table td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.library-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Sorting indicators */
+.sort-icon {
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.sort-asc .sort-icon {
+  border-bottom: 4px solid #666;
+}
+
+.sort-desc .sort-icon {
+  border-top: 4px solid #666;
+}
+
+.library-table th .sort-icon {
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  vertical-align: middle;
+}
+
+.library-table th[data-sort="date"] {
+  min-width: 80px;
+}
+
+.library-table th[data-sort="author"],
+.library-table th[data-sort="director"],
+.library-table th[data-sort="artist"] {
+  min-width: 150px;
+}
+
+.library-table th[data-sort="title"] {
+  min-width: 200px;
+}
