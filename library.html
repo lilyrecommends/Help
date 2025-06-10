@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LB - Library</title>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
   </head>
   <body>
     <div class="website">
@@ -26,42 +28,8 @@
                   <th data-sort="title">Title <span class="sort-icon"></span></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>1923</td>
-                  <td>Scholes, Percy A.</td>
-                  <td>The Listener's History of Music</td>
-                </tr>
-                <tr>
-                  <td>1965</td>
-                  <td>Spiegl, Fritz</td>
-                  <td>What the Papers didn't mean to say</td>
-                </tr>
-                <tr>
-                  <td>1917</td>
-                  <td>Mackey, Albert G.</td>
-                  <td>Encyclopedia of Freemasonry and Its Kindred Sciences comprising the Whole Range of Arts, Sciences, and LIterature as Connected with the Institution</td>
-                </tr>
-                <tr>
-                  <td>1999</td>
-                  <td></td>
-                  <td>Quotations</td>
-                </tr>
-                <tr>
-                  <td>1964</td>
-                  <td>Jung, Carl</td>
-                  <td>Man and His Symbols</td>
-                </tr>
-                <tr>
-                  <td>1977</td>
-                  <td>Popper, Karl R.</td>
-                  <td>The Logic of Scientific Discovery</td>
-                </tr>
-                <tr>
-                  <td>1934</td>
-                  <td>Carnap, Rudolf</td>
-                  <td>Psyche Miniatures, General Series No. 63: The Unity of Science</td>
-                </tr>
+              <tbody id="literature-body">
+                <!-- Data will be loaded here -->
               </tbody>
             </table>
           </div>
@@ -74,10 +42,11 @@
                   <th data-sort="date">Date <span class="sort-icon"></span></th>
                   <th data-sort="director">Director <span class="sort-icon"></span></th>
                   <th data-sort="title">Title <span class="sort-icon"></span></th>
+                  <th data-sort="rating">Rating <span class="sort-icon"></span></th>
                 </tr>
               </thead>
-              <tbody>
-                <!-- Add your cinema items here -->
+              <tbody id="cinema-body">
+                <!-- Data will be loaded here -->
               </tbody>
             </table>
           </div>
@@ -92,8 +61,8 @@
                   <th data-sort="title">Title <span class="sort-icon"></span></th>
                 </tr>
               </thead>
-              <tbody>
-                <!-- Add your music items here -->
+              <tbody id="music-body">
+                <!-- Data will be loaded here -->
               </tbody>
             </table>
           </div>
@@ -118,7 +87,84 @@
     </div>
 
     <script>
+      const SHEET_ID = '1VRTZ7u2ZsgtICWkA9w0b7uXRWAKEcyxXrv3lsKxLg8g';
+      const SHEETS = {
+        literature: 'Literature',
+        cinema: 'Cinema',
+        music: 'Music'
+      };
+
+      async function loadSheetData(sheetName) {
+        const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
+        try {
+          const response = await fetch(url);
+          const csvText = await response.text();
+          const data = Papa.parse(csvText, { header: true }).data;
+          
+          // Filter out empty rows and get the correct section
+          let sectionData = [];
+          let inCorrectSection = false;
+          
+          for (const row of data) {
+            if (row.Date === sheetName) {
+              inCorrectSection = true;
+              continue;
+            }
+            if (inCorrectSection && (row.Date === 'Cinema' || row.Date === 'Music' || row.Date === 'Literature')) {
+              break;
+            }
+            if (inCorrectSection && (row.Date || row.Title)) {
+              sectionData.push(row);
+            }
+          }
+          
+          return sectionData;
+        } catch (error) {
+          console.error(`Error loading ${sheetName} data:`, error);
+          return [];
+        }
+      }
+
+      function createTableRow(data, section) {
+        const row = document.createElement('tr');
+        
+        if (section === 'cinema') {
+          row.innerHTML = `
+            <td>${data.Date || ''}</td>
+            <td>${data.Director || ''}</td>
+            <td>${data.Title || ''}</td>
+            <td>${data.Rating || ''}</td>
+          `;
+        } else {
+          row.innerHTML = `
+            <td>${data.Date || ''}</td>
+            <td>${data.Author || data.Artist || ''}</td>
+            <td>${data.Title || ''}</td>
+          `;
+        }
+        
+        return row;
+      }
+
+      async function loadAllData() {
+        for (const [section, sheetName] of Object.entries(SHEETS)) {
+          const data = await loadSheetData(sheetName);
+          const tbody = document.getElementById(`${section}-body`);
+          if (tbody) {
+            tbody.innerHTML = '';
+            data.forEach(row => {
+              if (row.Date || row.Title) { // Only add rows that have at least a date or title
+                tbody.appendChild(createTableRow(row, section));
+              }
+            });
+          }
+        }
+      }
+
       document.addEventListener('DOMContentLoaded', function() {
+        // Load data
+        loadAllData();
+
         // Collapsible functionality
         const collapsibles = document.getElementsByClassName("collapsible");
         for (let i = 0; i < collapsibles.length; i++) {
@@ -162,6 +208,9 @@
                 if (sortBy === "date") {
                   // Sort dates
                   return isAsc ? new Date(aValue) - new Date(bValue) : new Date(bValue) - new Date(aValue);
+                } else if (sortBy === "rating") {
+                  // Sort ratings numerically
+                  return isAsc ? (parseFloat(aValue) || 0) - (parseFloat(bValue) || 0) : (parseFloat(bValue) || 0) - (parseFloat(aValue) || 0);
                 } else {
                   // Sort text
                   return isAsc ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
