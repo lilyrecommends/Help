@@ -98,7 +98,7 @@
           const tbody = document.getElementById('literature-body');
           tbody.innerHTML = '';
           data.forEach(row => {
-            if (row.Date || row.Author || row.Title) {
+            if ((row.Date || row.Author || row.Title) && !(row.Rating || row.Director || row.Year)) {
               const tr = document.createElement('tr');
               tr.innerHTML = `
                 <td>${row.Date || ''}</td>
@@ -146,7 +146,6 @@
         // Collapsible functionality
         const collapsibles = document.getElementsByClassName("collapsible");
         for (let i = 0; i < collapsibles.length; i++) {
-          // Set initial state to collapsed
           collapsibles[i].classList.add("collapsed");
           const content = collapsibles[i].nextElementSibling;
           content.classList.add("collapsed");
