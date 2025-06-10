@@ -87,81 +87,34 @@
     </div>
 
     <script>
-      const SHEET_ID = '1VRTZ7u2ZsgtICWkA9w0b7uXRWAKEcyxXrv3lsKxLg8g';
-      const SHEETS = {
-        literature: 'Literature',
-        cinema: 'Cinema',
-        music: 'Music'
-      };
+      const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGK8ELrkZ8l6Fn0F1uSUiDVOz6Wu60mwQQmZ3joolI71hL4eY59RS4x8epNxvahnzi5c5Ve8n7ocIS/pub?output=csv';
 
-      async function loadSheetData(sheetName) {
-        const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
+      async function loadLiteratureData() {
         try {
-          const response = await fetch(url);
+          const response = await fetch(CSV_URL);
           const csvText = await response.text();
           const data = Papa.parse(csvText, { header: true }).data;
-          
-          // Filter out empty rows and get the correct section
-          let sectionData = [];
-          let inCorrectSection = false;
-          
-          for (const row of data) {
-            if (row.Date === sheetName) {
-              inCorrectSection = true;
-              continue;
+          const tbody = document.getElementById('literature-body');
+          tbody.innerHTML = '';
+          data.forEach(row => {
+            // Only add rows that have a Date, Author, or Title
+            if (row.Date || row.Author || row.Title) {
+              const tr = document.createElement('tr');
+              tr.innerHTML = `
+                <td>${row.Date || ''}</td>
+                <td>${row.Author || ''}</td>
+                <td>${row.Title || ''}</td>
+              `;
+              tbody.appendChild(tr);
             }
-            if (inCorrectSection && (row.Date === 'Cinema' || row.Date === 'Music' || row.Date === 'Literature')) {
-              break;
-            }
-            if (inCorrectSection && (row.Date || row.Title)) {
-              sectionData.push(row);
-            }
-          }
-          
-          return sectionData;
+          });
         } catch (error) {
-          console.error(`Error loading ${sheetName} data:`, error);
-          return [];
-        }
-      }
-
-      function createTableRow(data, section) {
-        const row = document.createElement('tr');
-        
-        if (section === 'cinema') {
-          row.innerHTML = `
-            <td>${data.Date || ''}</td>
-            <td>${data.Director || ''}</td>
-            <td>${data.Title || ''}</td>
-            <td>${data.Rating || ''}</td>
-          `;
-        } else {
-          row.innerHTML = `
-            <td>${data.Date || ''}</td>
-            <td>${data.Author || data.Artist || ''}</td>
-            <td>${data.Title || ''}</td>
-          `;
-        }
-        
-        return row;
-      }
-
-      async function loadAllData() {
-        for (const [section, sheetName] of Object.entries(SHEETS)) {
-          const data = await loadSheetData(sheetName);
-          const tbody = document.getElementById(`${section}-body`);
-          if (tbody) {
-            tbody.innerHTML = '';
-            data.forEach(row => {
-              if (row.Date || row.Title) { // Only add rows that have at least a date or title
-                tbody.appendChild(createTableRow(row, section));
-              }
-            });
-          }
+          console.error('Error loading Literature data:', error);
         }
       }
 
       document.addEventListener('DOMContentLoaded', function() {
+        loadLiteratureData();
         // Load data
         loadAllData();
 
