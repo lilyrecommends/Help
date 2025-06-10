@@ -87,17 +87,17 @@
     </div>
 
     <script>
-      const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGK8ELrkZ8l6Fn0F1uSUiDVOz6Wu60mwQQmZ3joolI71hL4eY59RS4x8epNxvahnzi5c5Ve8n7ocIS/pub?output=csv';
+      const LITERATURE_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGK8ELrkZ8l6Fn0F1uSUiDVOz6Wu60mwQQmZ3joolI71hL4eY59RS4x8epNxvahnzi5c5Ve8n7ocIS/pub?gid=0&single=true&output=csv';
+      const CINEMA_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGK8ELrkZ8l6Fn0F1uSUiDVOz6Wu60mwQQmZ3joolI71hL4eY59RS4x8epNxvahnzi5c5Ve8n7ocIS/pub?gid=188241204&single=true&output=csv';
 
       async function loadLiteratureData() {
         try {
-          const response = await fetch(CSV_URL);
+          const response = await fetch(LITERATURE_CSV);
           const csvText = await response.text();
           const data = Papa.parse(csvText, { header: true }).data;
           const tbody = document.getElementById('literature-body');
           tbody.innerHTML = '';
           data.forEach(row => {
-            // Only add rows that have a Date, Author, or Title
             if (row.Date || row.Author || row.Title) {
               const tr = document.createElement('tr');
               tr.innerHTML = `
@@ -113,8 +113,33 @@
         }
       }
 
+      async function loadCinemaData() {
+        try {
+          const response = await fetch(CINEMA_CSV);
+          const csvText = await response.text();
+          const data = Papa.parse(csvText, { header: true }).data;
+          const tbody = document.getElementById('cinema-body');
+          tbody.innerHTML = '';
+          data.forEach(row => {
+            if (row.Rating || row.Director || row.Title || row.Year) {
+              const tr = document.createElement('tr');
+              tr.innerHTML = `
+                <td>${row.Rating || ''}</td>
+                <td>${row.Director || ''}</td>
+                <td>${row.Title || ''}</td>
+                <td>${row.Year || ''}</td>
+              `;
+              tbody.appendChild(tr);
+            }
+          });
+        } catch (error) {
+          console.error('Error loading Cinema data:', error);
+        }
+      }
+
       document.addEventListener('DOMContentLoaded', function() {
         loadLiteratureData();
+        loadCinemaData();
         // Load data
         loadAllData();
 
