@@ -35,20 +35,22 @@
           </div>
 
           <button class="collapsible">Cinema</button>
-          <div class="content">
-            <table class="library-table" data-section="cinema">
-              <thead>
-                <tr>
-                  <th data-sort="date">Date <span class="sort-icon"></span></th>
-                  <th data-sort="director">Director <span class="sort-icon"></span></th>
-                  <th data-sort="title">Title <span class="sort-icon"></span></th>
-                  <th data-sort="rating">Rating <span class="sort-icon"></span></th>
-                </tr>
-              </thead>
-              <tbody id="cinema-body">
-                <!-- Data will be loaded here -->
-              </tbody>
-            </table>
+          <div class="content collapsed">
+            <div class="scroll-table">
+              <table class="library-table" data-section="cinema">
+                <thead>
+                  <tr>
+                    <th data-sort="date">Date <span class="sort-icon"></span></th>
+                    <th data-sort="director">Director <span class="sort-icon"></span></th>
+                    <th data-sort="title">Title <span class="sort-icon"></span></th>
+                    <th data-sort="rating">Rating <span class="sort-icon"></span></th>
+                  </tr>
+                </thead>
+                <tbody id="cinema-body">
+                  <!-- Data will be loaded here -->
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <button class="collapsible">Music</button>
@@ -146,14 +148,13 @@
         // Collapsible functionality
         const collapsibles = document.getElementsByClassName("collapsible");
         for (let i = 0; i < collapsibles.length; i++) {
-          collapsibles[i].classList.add("collapsed");
-          const content = collapsibles[i].nextElementSibling;
-          content.classList.add("collapsed");
-          
           collapsibles[i].addEventListener("click", function() {
-            this.classList.toggle("collapsed");
             const content = this.nextElementSibling;
-            content.classList.toggle("collapsed");
+            if (content.classList.contains("collapsed")) {
+              content.classList.remove("collapsed");
+            } else {
+              content.classList.add("collapsed");
+            }
           });
         }
 

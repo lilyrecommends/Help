@@ -117,10 +117,12 @@ a:visited {
   overflow: hidden;
   transition: max-height 0.3s ease-out;
   margin-top: 10px;
+  display: block;
 }
 
 .content.collapsed {
   max-height: 0;
+  display: none;
 }
 
 /* Remove default bullet points and add custom arrow */
@@ -204,4 +206,15 @@ a:visited {
 
 .library-table th[data-sort="title"] {
   min-width: 200px;
+}
+
+.scroll-table {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+}
+
+.scroll-table .library-table {
+  width: 100%;
+  table-layout: auto;
 }
