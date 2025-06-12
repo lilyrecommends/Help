@@ -230,3 +230,10 @@ a:visited {
   width: 100%;
   table-layout: auto;
 }
+
+.scroll-log {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 24px;
+  padding-right: 8px;
+}
