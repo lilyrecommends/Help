@@ -5,8 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LB - Library</title>
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
   </head>
   <body>
     <div class="website">
@@ -18,189 +16,438 @@
       </div>
       <div class="main-section-container">
         <div class="main-section">
-          <button class="collapsible">Literature</button>
-          <div class="content">
-            <table class="library-table" data-section="literature">
-              <thead>
-                <tr>
-                  <th data-sort="date">Date <span class="sort-icon"></span></th>
-                  <th data-sort="author">Author <span class="sort-icon"></span></th>
-                  <th data-sort="title">Title <span class="sort-icon"></span></th>
-                </tr>
-              </thead>
-              <tbody id="literature-body">
-                <!-- Data will be loaded here -->
-              </tbody>
-            </table>
-          </div>
-
-          <button class="collapsible">Cinema</button>
+          <button class="collapsible collapsed">Literature <span class="heart">♥</span></button>
           <div class="content collapsed">
             <div class="scroll-table">
-              <table class="library-table" data-section="cinema">
+              <table class="library-table" style="margin-bottom:24px;">
                 <thead>
                   <tr>
-                    <th data-sort="date">Date <span class="sort-icon"></span></th>
-                    <th data-sort="director">Director <span class="sort-icon"></span></th>
-                    <th data-sort="title">Title <span class="sort-icon"></span></th>
-                    <th data-sort="rating">Rating <span class="sort-icon"></span></th>
+                    <th>Date</th>
+                    <th>Author</th>
+                    <th>Title</th>
                   </tr>
                 </thead>
-                <tbody id="cinema-body">
-                  <!-- Data will be loaded here -->
+                <tbody>
+                  <tr><td>1861</td><td>Holmes, Oliver Wendell</td><td>Elsie Venner</td></tr>
+                  <tr><td>1866</td><td>Wood, J. G. (Rev)</td><td>Homes Without Hands: Being a Description of the Habitations of Animals, Classed According to Their Principle of Construction</td></tr>
+                  <tr><td>1867</td><td>Smith, William W.</td><td>A Complete Etymology of the English Language</td></tr>
+                  <tr><td>1867</td><td></td><td>The Book of Common Prayer and Administration of the Sacraments, and Other Rites and Ceremonies of the Church, According to the Use of the United Church of England and Ireland: Together with the Psalter or Psalms of David, Pointed as they are to be Sung or Said in Churches; and the Form and Matter of Making, Ordaining, and Consecrating Bishops, Priests, and Deacons</td></tr>
+                  <tr><td>1869</td><td>Bunyan, John</td><td>Pilgrim's Progress, from This World to that which is to come</td></tr>
+                  <tr><td>1877</td><td>Kingston, W. H. G.</td><td>Clara Maynard or True & False</td></tr>
+                  <tr><td>1877</td><td>Lamb, Charles</td><td>The Essays of Elia</td></tr>
+                  <tr><td>1877</td><td>Palgrave, Fancris Turner</td><td>The Golden Treasury of the Best Song and Lyrical Poems in the English Language</td></tr>
+                  <tr><td>1880</td><td>Burke, Edmund</td><td>The Works of Edmund Burke: Volume I (A Vindication of Natural Society; An Essay on the Sublime and Beautiful)</td></tr>
+                  <tr><td>1880</td><td>Mendelssohn-Bartholdy, Felix</td><td>Lieder Ohne Worte for the Pianoforte</td></tr>
+                  <tr><td>1885</td><td>Gladman, F. J.</td><td>School Work: Control and Teaching, Organisation and Principles of Education</td></tr>
+                  <tr><td>1885</td><td>Stevenson, R. L.</td><td>A Child's Garden of Verses</td></tr>
+                  <tr><td>1886</td><td>Macaulay, Lord</td><td>Biographies of Lord Macaulay (Francis Atterbury; John Bunyan; Oliver Goldsmith; Samuel Johnson; William Pitt)</td></tr>
+                  <tr><td>1887</td><td>Charles, Elizabeth</td><td>Chronicles of the Schonberg-Cotta Family</td></tr>
+                  <tr><td>1888</td><td>Morley, Henry (Ed.); Steele & Addison</td><td>The Spectator</td></tr>
+                  <tr><td>1891</td><td>Carlyle, Thomas</td><td>Sartor Resartvs</td></tr>
+                  <tr><td>1891</td><td>Frith, Henry</td><td>How to Read Character in Features, Forms, & Faces</td></tr>
+                  <tr><td>1891</td><td>George, Henry</td><td>The Condition of Labour: An Open Letter to Pope Leo XIII</td></tr>
+                  <tr><td>1891</td><td>Nicoll, W. Robertson (ed.); Plummer, Alfred</td><td>THe Expositor's Bible; The General Epistles of St. James and St. Jude</td></tr>
+                  <tr><td>1892</td><td>Pitt, George</td><td>Miscellaneous Pieces</td></tr>
+                  <tr><td>1893</td><td>George, Henry</td><td>A Perplexed Philosopher... being An Examination of Mr. Herbert Spencer's Various Utterances on the Land Question, with Some Incidental Reference to His Synthetic Philosophy</td></tr>
+                  <tr><td>1894</td><td>Creasy, Edward</td><td>The Fifteen Decisive Battles of the World</td></tr>
+                  <tr><td>1894</td><td>Ruskin, John</td><td>The Eagle's Nest: Ten lectures on the relation of natural science to art</td></tr>
+                  <tr><td>1894</td><td>Sabatier, Paul</td><td>Life of St. Francis of Assisi</td></tr>
+                  <tr><td>1895</td><td>Arnold, Matthew</td><td>Selected Poems of Matthew Arnold</td></tr>
+                  <tr><td>1895</td><td>Green, John Richard</td><td>A Short History of the English People</td></tr>
+                  <tr><td>1895</td><td>Morris, Lewis</td><td>The Works of Lewis Morris</td></tr>
+                  <tr><td>1895</td><td>Stevenson, R. Louis</td><td>Virginibus Puerisque and other papers</td></tr>
+                  <tr><td>1897</td><td>Merriman, Henry Seton</td><td>In Kedar's Tents</td></tr>
+                  <tr><td>1897</td><td>Pater, Walter</td><td>Appreciations with an Essay on Style</td></tr>
+                  <tr><td>1898</td><td>Addison, Joseph</td><td>Essays of Joseph Addison</td></tr>
+                  <tr><td>1898</td><td>Harrison, Frederic</td><td>Oliver Cromwell</td></tr>
+                  <tr><td>1898</td><td>Jerome, Jerome K.</td><td>The Second Thoughts of An Idle Fellow</td></tr>
+                  <tr><td>1898</td><td>Kant, Immanuel</td><td>Fundamental Principles of the Metaphysic of Morals; Critical Examination of Practical Reason; Elements of Pure Practical Reason ; First Part of the Philosophical Theory of Religion</td></tr>
+                  <tr><td>1899</td><td>Ruskin, John</td><td>Munera Pulveris: Six essays on the elements of political philosophy</td></tr>
+                  <tr><td>1900</td><td>Dryden, John</td><td>Essays Vol. I</td></tr>
+                  <tr><td>1901</td><td>Dobson, Austin</td><td>Old-World Idylls and other verses</td></tr>
+                  <tr><td>1901</td><td>Hamilton, Alexander; Madison, James; Jay, John</td><td>The Federalist: I</td></tr>
+                  <tr><td>1901</td><td>Hamilton, Alexander; Madison, James; Jay, John</td><td>The Federalist: II</td></tr>
+                  <tr><td>1901</td><td>Kingston, Alfred</td><td>The Romance of A Hundred Years: Remarkable chapters in the social and public life of the nineteenth century</td></tr>
+                  <tr><td>1901</td><td></td><td>The Koran</td></tr>
+                  <tr><td>1903</td><td>Harrison</td><td>Platonism in English Poetry of the Sixteenth and Seventeenth Century</td></tr>
+                  <tr><td>1903</td><td>Hazlitt, William</td><td>Lectures on the English Comic Writers (On Wit andn Humour; On Shakespeare and Ben Jonson; On Cowley, Butler, Suckling, Etherege, etc.; On Wycherley, Congreve, Vanbrugh, and Farquhar; On the periodical essayists; On the English novelists; On the works of Hogarth; On the Comic writers of the last century)</td></tr>
+                  <tr><td>1903</td><td>Lamb, Charles & Mary</td><td>Tales from Shakespeare</td></tr>
+                  <tr><td>1904</td><td>Adderley, James</td><td>Prayer-Book Teaching: An Attempt to construct a positive statement of Church of England Doctrine and Practice from the words of the Book of Common Prayer and the Articles</td></tr>
+                  <tr><td>1904</td><td>Longfellow, Henry Wadsworth</td><td>The Poetical Works of Longfellow</td></tr>
+                  <tr><td>1904</td><td>Phillips, Stephen</td><td>Poems</td></tr>
+                  <tr><td>1904</td><td>Wordsworth, William (Ed. by Hutchinson, Thomas)</td><td>The Poetical Works of Wordsworth</td></tr>
+                  <tr><td>1905</td><td>Hyde, Lilian Stoughton</td><td>Favourite Greek Myths</td></tr>
+                  <tr><td>1905</td><td>Shelley, Percy Bysshe (Ed. by Thomas Hutchinson)</td><td>The Complete Poetical Works of Percy Bysshe Shelley</td></tr>
+                  <tr><td>1905</td><td>Symons, Arthur</td><td>Cities</td></tr>
+                  <tr><td>1905</td><td>Welsh, R. E.</td><td>Man to Man</td></tr>
+                  <tr><td>1906</td><td>Stevenson, Robert Louis</td><td>Familiar Studies of Men and Books</td></tr>
+                  <tr><td>1907</td><td>Macaulay, Thomas Babington</td><td>Lord Macaulay's Essays (on Milton, Machiavelli, Jews, Byron, Boswell, Horace Walpole, William Pitt, Bacon, Claddstone, Holland, Addison, Frederic the Great, etc.) and Lays of Ancient Rome</td></tr>
+                  <tr><td>1907</td><td>Stevenson, R. L.</td><td>The Pocket R. L. S.: Being favourite passages from works of Stevenson</td></tr>
+                  <tr><td>1908</td><td>Huxley, T. H.</td><td>Collected Essays</td></tr>
+                  <tr><td>1908</td><td>Keats, John (Ed. by Forman, H. B.)</td><td>The Poetical Works of John Keats</td></tr>
+                  <tr><td>1908</td><td>Trench, Richard Chenevix</td><td>On the study of words</td></tr>
+                  <tr><td>1909</td><td>Morison, J. Cotter</td><td>Macaulay</td></tr>
+                  <tr><td>1910</td><td>Birrell, Augustine</td><td>Obiter Dicta</td></tr>
+                  <tr><td>1910</td><td>Hadden, J. Cuthbert</td><td>Master Musicians: a book for Players, Singers, & Listeners</td></tr>
+                  <tr><td>1910</td><td>Holmes, Oliver Wendell</td><td>Autocrat of the Breakfast Table</td></tr>
+                  <tr><td>1910</td><td>Lankester, Sir Ray</td><td>Science From an Easy Chair</td></tr>
+                  <tr><td>1910</td><td>Stephen, Leslie</td><td>English Literature and Society in the XVIII Century</td></tr>
+                  <tr><td>1911</td><td>Goldsmith, Oliver</td><td>The Lives of "Beau" Nash and others (Macaulay, Parnell, Bolingbroke)</td></tr>
+                  <tr><td>1911</td><td></td><td>Religious Systems of the World: A contribution to the study of comparative religion</td></tr>
+                  <tr><td>1912</td><td>Aesop</td><td>Aesop's Fables</td></tr>
+                  <tr><td>1912</td><td>Spicer, W. A.</td><td>Our Day in the Light of Prophecy and Providence</td></tr>
+                  <tr><td>1912</td><td>Verney, Margaret M.</td><td>Bucks Biogrpahies</td></tr>
+                  <tr><td>1912</td><td>Wells, H. G.</td><td>Marriage</td></tr>
+                  <tr><td>1913</td><td>Thomas, Lewis</td><td>The Medusa and the Snail</td></tr>
+                  <tr><td>1914</td><td>Cantle, James</td><td>First Aid to the Injured</td></tr>
+                  <tr><td>1914</td><td>Gardiner, A. G.</td><td>Prophets, Priests, and Kings</td></tr>
+                  <tr><td>1914</td><td>Joyce, James</td><td>Dubliners</td></tr>
+                  <tr><td>1915</td><td></td><td>Modern Essays</td></tr>
+                  <tr><td>1916</td><td>Guerber, H. A.</td><td>The Myths of Greece and Rome</td></tr>
+                  <tr><td>1917</td><td>Mackey, Albert G.</td><td>Encyclopedia of Freemasonry and Its Kindred Sciences comprising the Whole Range of Arts, Sciences, and LIterature as Connected with the Institution</td></tr>
+                  <tr><td>1918</td><td>Browne, Henry</td><td>Our Renaissance: Essays on the Reform and Revival of Classical Studies</td></tr>
+                  <tr><td>1918</td><td>Whittier, John Greenleaf</td><td>Selected Poems of John Greenleaf Whittier</td></tr>
+                  <tr><td>1919</td><td>James, Henry</td><td>Selected Short Stories (Last of the Valerii, The Real Thing, The Lesson of the Master, Daisy Miller)</td></tr>
+                  <tr><td>1919</td><td>Ruskin, John</td><td>Sesame and Lilies; Ethics of the Dust</td></tr>
+                  <tr><td>1920</td><td>Smellie, Alexander</td><td>The Well by the Way</td></tr>
+                  <tr><td>1921</td><td>Crowest, Frederick J.</td><td>Beethoven</td></tr>
+                  <tr><td>1921</td><td>Wittgenstein, Ludwig</td><td>Tractatus Logico-Philosophicus</td></tr>
+                  <tr><td>1921</td><td></td><td>Opera At Home</td></tr>
+                  <tr><td>1923</td><td>Chesterton, G. K.</td><td>St. Francis of Assisi</td></tr>
+                  <tr><td>1923</td><td>Huxley, Aldous</td><td>On The Margin: Notes and Essays</td></tr>
+                  <tr><td>1923</td><td>MacLaurin, C.</td><td>Post Mortem: Essays, Historical and Medical</td></tr>
+                  <tr><td>1923</td><td>Masefield, John</td><td>Poems</td></tr>
+                  <tr><td>1923</td><td>Pritchard, F. H. (Selected by)</td><td>Essays of To-Day: Anthology</td></tr>
+                  <tr><td>1924</td><td>Herzen, Alexander</td><td>The Memoirs of Alexander Herzen: Volume I</td></tr>
+                  <tr><td>1924</td><td>Swinburne, Algernon Charles</td><td>Swinburne's Collected Poetical Works: Volume I</td></tr>
+                  <tr><td>1925</td><td>Hendrick, Burton J.</td><td>The Life and Letters of Walter H. Page</td></tr>
+                  <tr><td>1925</td><td>Laertius, Diogenes</td><td>The Loeb Classical Library [185]: Lives of Eminent Philosophers II</td></tr>
+                  <tr><td>1925</td><td>Laertius, Diogenes</td><td>The Loeb Classical Library [184]: Lives of Eminent Philosophers I</td></tr>
+                  <tr><td>1925</td><td>Pushkin, Gogol, Lermontov, Turgenev, Dostoevsky, Garshin, Chekhov, Gorky, Kuprin, Andreev (Selected by Chamot, A. E.)</td><td>Selected Russian Short Stories (Pushkin's Queen of Spades; Gogol's Christmas Eve; Lermontov's Tasman and Ashik-Kerib; Turgenev's Asya; Dostoevsky's A Nasty Story; Garshin's Signal, Red Flower; Chekhov's An Awkward Situation and Thieves; Peshkov's In the Steppes and The Khan and his Son; Kuprin's Temptation; Andreev's The Lie and Silence)</td></tr>
+                  <tr><td>1926</td><td>Ford, Henry</td><td>The Great To-Day and Greater Future</td></tr>
+                  <tr><td>1927</td><td>Meredith, George</td><td>The Ordeal of Richard Feverel</td></tr>
+                  <tr><td>1927</td><td>Poe, Edgar Allen</td><td>The Works of Edgar Allen Poe</td></tr>
+                  <tr><td>1927</td><td>Smith, Sir George Adam; Bevan E.; Burkitt, F. C... Edited by Bevan, E. R. and Singer, C.</td><td>The Legacy of Israel</td></tr>
+                  <tr><td>1927</td><td>Wells, H. G.</td><td>The Passionate Friends</td></tr>
+                  <tr><td>1927</td><td>Williams, C (Selected by)</td><td>A Book of Victorian Narrative Verse</td></tr>
+                  <tr><td>1929</td><td>Brooke, Tucker (ed.); De la Mare, Walter (introduction)</td><td>The Shakespeare Songs</td></tr>
+                  <tr><td>1929</td><td>Rose, John Holland</td><td>Life of Napoleon I</td></tr>
+                  <tr><td>1931</td><td>Collins, A. S. (Edited)</td><td>Treasury of English Verse New and Old</td></tr>
+                  <tr><td>1931</td><td>Lucas, John Saint (Selected by)</td><td>The Oxford Book of French Verse (xiiith century to xxth century)</td></tr>
+                  <tr><td>1931</td><td>Sale, Charles (Chic)</td><td>The Specialist</td></tr>
+                  <tr><td>1932</td><td>Gilbert, W. S.</td><td>The Best Known Works of W. S. Gilbert</td></tr>
+                  <tr><td>1933</td><td>Housman, A. E.</td><td>The Name and Nature of Poetry</td></tr>
+                  <tr><td>1933</td><td>Wells, H. G.</td><td>The Open Conspiracy and Other Writings</td></tr>
+                  <tr><td>1934</td><td>Carnap, Rudolf</td><td>Psyche Miniatures, General Series No. 63: The Unity of Science</td></tr>
+                  <tr><td>1934</td><td>Montague, J. F.</td><td>I know just the thing for that!</td></tr>
+                  <tr><td>1936</td><td>Schopenhauer, Arthur</td><td>Philosophy of Arthur Schopenhauer</td></tr>
+                  <tr><td>1938</td><td>Boaz, Franz</td><td>The Mind of Primitive Man</td></tr>
+                  <tr><td>1938</td><td>Vallance, Rosalind</td><td>A Hundred English Essays</td></tr>
+                  <tr><td>1939</td><td>Chesterton, G. K.</td><td>Stories, Essays, & Poems</td></tr>
+                  <tr><td>1939</td><td>Ellis, Havelock</td><td>Thinker's Library [74]: Morals, Manners, and Men</td></tr>
+                  <tr><td>1939</td><td>Murdoch, Walter</td><td>Collected Essays</td></tr>
+                  <tr><td>1940</td><td>Mill, John Stuart</td><td>Autobiography</td></tr>
+                  <tr><td>1940</td><td>Richards, J. M.</td><td>An Introduction to Modern Architecture</td></tr>
+                  <tr><td>1941</td><td>Donne, John; Blake, William</td><td>The Complete Poetry and Selected Prose of John Donne & The Complete Poetry of William Blake</td></tr>
+                  <tr><td>1941</td><td>Kierkegaard, Søren</td><td>Training in Christianity and the Edifying Discourse which 'Accompanied' It</td></tr>
+                  <tr><td>1941</td><td>Plato</td><td>The Republic of Plato</td></tr>
+                  <tr><td>1942</td><td>Beadnell, C. M.</td><td>Thinker's Library [89]: The Origin of the Kiss and Other Scientific Diversions</td></tr>
+                  <tr><td>1942</td><td>Donne, John (Ed. by Hayward, John)</td><td>Complete Poetry and Selected Prose</td></tr>
+                  <tr><td>1959</td><td></td><td>Eagle Book of Ships and Boats</td></tr>
+                  <tr><td>1960</td><td>Boswell, James</td><td>The Life of Samuel Johnson</td></tr>
+                  <tr><td>1960</td><td>Cicero</td><td>Selected Works</td></tr>
+                  <tr><td>1960</td><td>Livy</td><td>The Early History of Rome</td></tr>
+                  <tr><td>1961</td><td>Dahl, Roald</td><td>Someone Like  You</td></tr>
+                  <tr><td>1961</td><td>Gogol, Nikolai</td><td>Dead Souls</td></tr>
+                  <tr><td>1961</td><td>Mann, Thomas</td><td>Little Herr Friedemann</td></tr>
+                  <tr><td>1962</td><td>Freud, Sigmund</td><td>Two Short Accounts of Psycho-Analysis</td></tr>
+                  <tr><td>1962</td><td>Huxley, Aldous</td><td>Island</td></tr>
+                  <tr><td>1962</td><td>Spengler, Oswald</td><td>The Decline of the West (abridged; ed. by Helmut Werner)</td></tr>
+                  <tr><td>1963</td><td>Bacons, Sir Francis; Swift, J.; Hume, Plutarch, Stevenson, Ruskin, William James, Schopoenhauer, Faraday, Burke, Calhoun, Macaulay, Voltaire, Alighieri, Rousseau, Kant, Clausewitz, Malthus (Ed. by Hutchins, R. M., Adler, M. J)</td><td>Gateway to the Great Books [7]: Man and Society</td></tr>
+                  <tr><td>1963</td><td>Berlin, Isaiah</td><td>Karl Marx: His life and environment</td></tr>
+                  <tr><td>1963</td><td>Dickens, Charles</td><td>Great Expectations</td></tr>
+                  <tr><td>1963</td><td>Farago, Ladislas</td><td>Patton: Ordeal and Triumph</td></tr>
+                  <tr><td>1963</td><td>George, Peter</td><td>Dr. Strangelove or: How I learned to stop worrying and love the bomb</td></tr>
+                  <tr><td>1963</td><td>Lenin, Vladimir</td><td>What is to be Done?</td></tr>
+                  <tr><td>1963</td><td>Orwell, George</td><td>The Road to Wigan Pier</td></tr>
+                  <tr><td>1963</td><td>Ruskin, John</td><td>The Seven Lamps of Architecture</td></tr>
+                  <tr><td>1963</td><td>Skeat, Rev. Walter W.</td><td>An Etymological Dictionary of the English Language</td></tr>
+                  <tr><td>1963</td><td>Solzhenitsyn, Alexander</td><td>One Day in the Life of Ivan Denisovich</td></tr>
+                  <tr><td>1963</td><td>Vatsyayana; Plato</td><td>The Kama Sutra of Vatsyayana; The Phaedrus</td></tr>
+                  <tr><td>1964</td><td>Arendt, Hannah</td><td>Eichmann in Jerusalem</td></tr>
+                  <tr><td>1964</td><td>Aristophanes</td><td>The Wasps; The Poet and the Women; The Frogs</td></tr>
+                  <tr><td>1964</td><td>Beaumarchais, Caron de</td><td>The Berber of Seville; The Marriage of Seville</td></tr>
+                  <tr><td>1964</td><td>Horace</td><td>Odes of Horace</td></tr>
+                  <tr><td>1964</td><td>Joyce, James</td><td>A Portrait of the Artist as a Young Man</td></tr>
+                  <tr><td>1964</td><td>Jung, Carl</td><td>Man and His Symbols</td></tr>
+                  <tr><td>1964</td><td>Pearson, E. Norman</td><td>Space, Time, and Self</td></tr>
+                  <tr><td>1964</td><td>Sabersky, Rolf H.; Acosta, Allan J.</td><td>Fluid Flow in Fluid Mechanics</td></tr>
+                  <tr><td>1965</td><td>Aristotle; Horace; Longinus</td><td>Classical Literary Criticism (Aristotle's On the Art of Poetry; Horace's On the Art of Poetry; Longinus' On the Sublime)</td></tr>
+                  <tr><td>1965</td><td>Scott, Sir Walter</td><td>Ivanhoe</td></tr>
+                  <tr><td>1965</td><td>Spiegl, Fritz</td><td>What the Papers didn't mean to say</td></tr>
+                  <tr><td>1965</td><td>Thoreau, Henry David</td><td>Walden and Civil Disobedience</td></tr>
+                  <tr><td>1965</td><td></td><td>Landmarks of Western Art: Architecture, Painting, Sculpture</td></tr>
+                  <tr><td>1965</td><td></td><td>The Upanishads</td></tr>
+                  <tr><td>1966</td><td>Brecht, Bertolt</td><td>Manual of Piety</td></tr>
+                  <tr><td>1966</td><td>Douglas, Bryan</td><td>Great Stories of Mystery and Imagination: Selected by...</td></tr>
+                  <tr><td>1966</td><td>Lasch, Christopher</td><td>The New Radicalism in America (1889-1963)</td></tr>
+                  <tr><td>1966</td><td>Leopardi, Giacomo</td><td>Selected Prose and Poetry</td></tr>
+                  <tr><td>1966</td><td>Mabie, Hamilton H.; Ocvirk, Fred W.</td><td>Mechanisms and Dynamics of Machinery</td></tr>
+                  <tr><td>1966</td><td>Melville, Herman</td><td>The Confidence Man</td></tr>
+                  <tr><td>1966</td><td>Nietzsche, Friedrich (Kaufmann, Walter)</td><td>Basic Writings of Nietzsche</td></tr>
+                  <tr><td>1966</td><td>Swift, Jonathan</td><td>Gulliver's Travels</td></tr>
+                  <tr><td>1966</td><td>Tolstoy, Lev</td><td>Resurrection</td></tr>
+                  <tr><td>1967</td><td>Marvell, Andrew</td><td>Selected Poetry of Andrew Marvell</td></tr>
+                  <tr><td>1967</td><td>Melville, Herman</td><td>Billy Budd, Sailor, & Other stories (including Bartleby)</td></tr>
+                  <tr><td>1967</td><td>Wolfe, Tom</td><td>The Electric Kool-Aid Acid Test</td></tr>
+                  <tr><td>1968</td><td>Cellini, Benvenuto</td><td>The Life of Benvenuto Cellini</td></tr>
+                  <tr><td>1968</td><td>Clausewitz, Carl von</td><td>On War</td></tr>
+                  <tr><td>1968</td><td>Darwin, Charles</td><td>The Voyage of the 'Beagle'</td></tr>
+                  <tr><td>1968</td><td>Kafka, Franz</td><td>The Trial</td></tr>
+                  <tr><td>1968</td><td>Tolstoy, Lev</td><td>Childhood, Boyhood, Youth</td></tr>
+                  <tr><td>1968</td><td></td><td>A pageant of history: The reigns of our kings and queens; Famous people and events in our history</td></tr>
+                  <tr><td>1969</td><td>Burke, Edmund</td><td>Reflections on the Revolution in France</td></tr>
+                  <tr><td>1969</td><td>Caesar, Julius</td><td>The Gallic War and Other Writings (Civil War; Alexandrine, African, and Spanish Wars; Fragments)</td></tr>
+                  <tr><td>1969</td><td>Cervantes, Miguel de</td><td>The Adventures of Don Quixote de La Mancha</td></tr>
+                  <tr><td>1969</td><td>Chekhov, Anton</td><td>Chekhov Plays (Three Sisters, Uncle Vanya, The Cherry Orchard, Ivanov, The Sea-Gull)</td></tr>
+                  <tr><td>1969</td><td>Hitler, Adolf</td><td>Mein Kampf</td></tr>
+                  <tr><td>1969</td><td>Homer</td><td>The Iliad</td></tr>
+                  <tr><td>1969</td><td>Huxley, Aldous</td><td>Brave New World and Brave New World Revisited</td></tr>
+                  <tr><td>1969</td><td>Kojeve, Alexandre; (Assembled by Bloom, Allan)</td><td>Introduction to the Reading of Hegel: Lectures on the Phenomology of Spirit</td></tr>
+                  <tr><td>1969</td><td>Nabokov, Vladimir</td><td>Ada</td></tr>
+                  <tr><td>1969</td><td>Poe, Edgar Allen</td><td>Selected Tales ( Fall of the House of Usher; Murders in the Rue Morgue; Mystery of Marie; MS. Found ; Berenice; Unparalleled Adventure; Descent into Maelstrom; Masque of Red Death; Pit and Pendulum; Tell-tale Heart; Gold-bug; Cask of Amontillado)</td></tr>
+                  <tr><td>1969</td><td>Stendhal</td><td>The Red and The Black</td></tr>
+                  <tr><td>1969</td><td>Verne, Jules</td><td>Twenty Thousand Leagues Under the Sea</td></tr>
+                  <tr><td>1969</td><td>Voltaire</td><td>Candide and Other Tales (Zadig, Micromegas, Master Simple, Princess of Babylon)</td></tr>
+                  <tr><td>1970</td><td>Dante</td><td>The Divine Comedy</td></tr>
+                  <tr><td>1970</td><td>Descartes, René</td><td>Philosophical Writings: A Selection</td></tr>
+                  <tr><td>1970</td><td>Dickens, Charles</td><td>Oliver Twist</td></tr>
+                  <tr><td>1970</td><td>Freud, Sigmund</td><td>Introductory Lectures on Pscyho-Analysis</td></tr>
+                  <tr><td>1970</td><td>Gibbon, Edward</td><td>The Decline and Fall of the Roman Empire</td></tr>
+                  <tr><td>1970</td><td>Goethe, Johann Wolfgang von</td><td>Faust</td></tr>
+                  <tr><td>1970</td><td>Koestler, Arthur</td><td>Darkness at Noon</td></tr>
+                  <tr><td>1970</td><td>Lindsey, Hal</td><td>The Late Great Planet Earth</td></tr>
+                  <tr><td>1970</td><td>Machiavelli, Niccolò</td><td>The Discourses</td></tr>
+                  <tr><td>1970</td><td>Malraux, André</td><td>Man's Estate</td></tr>
+                  <tr><td>1970</td><td>Milton, John</td><td>Paradise Lost and Other Writings (Paradise Regained; Samson Agonistes; Comus; Lycidas)</td></tr>
+                  <tr><td>1970</td><td>Misc. (Hitler, Churchill, Deere, Marshall, McBride, Cecil Brown, Shirer, Macarthur)</td><td>Reader's Digest Illustrated Story of World War II</td></tr>
+                  <tr><td>1970</td><td>Orwell, George</td><td>Nineteen Eighty-Four</td></tr>
+                  <tr><td>1970</td><td>Paine, Tom</td><td>The Rights of Man and Other Writings</td></tr>
+                  <tr><td>1970</td><td>Reich, Wilhelm</td><td>The Mass Psychology of Fascism</td></tr>
+                  <tr><td>1970</td><td>Sartre, Jean Paul</td><td>The Age of Reason</td></tr>
+                  <tr><td>1970</td><td>Spenser, Edmund</td><td>Selected Poetry (from the Shepherds' Calendar; from Amoretti; Epithalamion; From the Faerie Queene)</td></tr>
+                  <tr><td>1970</td><td>Thoreau, Henry David</td><td>Walden</td></tr>
+                  <tr><td>1970</td><td>Wordsworth, William</td><td>The Prelude</td></tr>
+                  <tr><td>1971</td><td>Carlyle, Thomas</td><td>On Great Men</td></tr>
+                  <tr><td>1971</td><td>Eliot, T. S.</td><td>The Waste Land and Other Poems</td></tr>
+                  <tr><td>1971</td><td>Grossmith, George and Weedon</td><td>The Diary of a Nobody</td></tr>
+                  <tr><td>1971</td><td>Horne, Donald</td><td>The Lucky Country</td></tr>
+                  <tr><td>1971</td><td>Kierkegaard, Søren</td><td>Concluding Unscientific Postscript</td></tr>
+                  <tr><td>1971</td><td>Mann, Thomas</td><td>The Magic Mountain</td></tr>
+                  <tr><td>1972</td><td>Gardner, Helen (Selected by)</td><td>The Metaphysical Poets</td></tr>
+                  <tr><td>1972</td><td>Gogol, Nikolai Vasilevich</td><td>Diary of a Madman; The Nose; The Overcoat; How Ivan Ivanovich Quarrelled with Ivan Nikiforovich; Ivan Fyodorovich Shponka and his Aunt</td></tr>
+                  <tr><td>1972</td><td>Machiavelli, Niccolò</td><td>The Prince; Discourses on the First Decade of Titus Livius; The History of Florence; Familiar Letters</td></tr>
+                  <tr><td>1972</td><td>Nietzsche, Friedrich (Kaufmann, Walter)</td><td>The Portable Nietzsche: Twilight of the Idols, The Antichrist, Nietzsche Contra Wagner, Thus Spoke Zarathrustra</td></tr>
+                  <tr><td>1972</td><td></td><td>The Union Prayerbook for Jewish Worship on the Sabbath Festivals and Daily Services</td></tr>
+                  <tr><td>1973</td><td>Gorky, Maxim</td><td>The Lower Depths</td></tr>
+                  <tr><td>1973</td><td>Kesey, Ken</td><td>One Flew Over the Cuckoo's Nest</td></tr>
+                  <tr><td>1973</td><td>Pynchon, Thomas</td><td>Gravity's Rainbow</td></tr>
+                  <tr><td>1973</td><td>Rousseau, Jean-Jacques</td><td>The Social Contract and Discourses</td></tr>
+                  <tr><td>1974</td><td>Byron, Lord</td><td>A Choice of Byron's Verse</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
-
-          <button class="collapsible">Music</button>
-          <div class="content">
-            <table class="library-table" data-section="music">
-              <thead>
-                <tr>
-                  <th data-sort="date">Date <span class="sort-icon"></span></th>
-                  <th data-sort="artist">Artist <span class="sort-icon"></span></th>
-                  <th data-sort="title">Title <span class="sort-icon"></span></th>
-                </tr>
-              </thead>
-              <tbody id="music-body">
-                <!-- Data will be loaded here -->
-              </tbody>
-            </table>
+          <button class="collapsible collapsed">Music <span class="heart">♥</span></button>
+          <div class="content collapsed">
+            <div class="scroll-table">
+              <table class="library-table" style="margin-bottom:24px;">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Artist</th>
+                    <th>Title</th>
+                    <th>G</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-
-          <button class="collapsible">Art</button>
-          <div class="content">
-            <table class="library-table" data-section="art">
-              <thead>
-                <tr>
-                  <th data-sort="date">Date <span class="sort-icon"></span></th>
-                  <th data-sort="artist">Artist <span class="sort-icon"></span></th>
-                  <th data-sort="title">Title <span class="sort-icon"></span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Add your art items here -->
-              </tbody>
-            </table>
+          <button class="collapsible collapsed">Cinema <span class="heart">♥</span></button>
+          <div class="content collapsed">
+            <div class="scroll-table">
+              <table class="library-table" style="margin-bottom:24px;">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Director</th>
+                    <th>Title</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>1902</td><td>Georges Méliès</td><td>A Trip to the Moon</td></tr>
+                  <tr><td>1920</td><td>Robert Wiene</td><td>Cabinet of Dr. Caligari</td></tr>
+                  <tr><td>1925</td><td>Sergei M. Eisenstein</td><td>Battleship Potemkin</td></tr>
+                  <tr><td>1927</td><td>Fritz Lang</td><td>Metropolis</td></tr>
+                  <tr><td>1929</td><td>Luis Buñuel & Salvador Dalí</td><td>Un Chien Andalou</td></tr>
+                  <tr><td>1931</td><td>Charlie Chaplin</td><td>City Lights</td></tr>
+                  <tr><td>1934</td><td>Frank Capra</td><td>It Happened One Night</td></tr>
+                  <tr><td>1934</td><td>W. S. Van Dyke</td><td>Thin Man</td></tr>
+                  <tr><td>1938</td><td>Howard Hawks</td><td>Bringing Up Baby</td></tr>
+                  <tr><td>1939</td><td>Ernst Lubitsch</td><td>Ninotchka</td></tr>
+                  <tr><td>1939</td><td>Frank Capra</td><td>Mr. Smith Goes to Washington</td></tr>
+                  <tr><td>1940</td><td>Ernst Lubitsch</td><td>Shop Around the Corner</td></tr>
+                  <tr><td>1940</td><td>George Cukor</td><td>Philedelphia Story</td></tr>
+                  <tr><td>1940</td><td>Howard Hawks</td><td>His Girl Friday</td></tr>
+                  <tr><td>1941</td><td>Preston Sturges</td><td>Lady Eve</td></tr>
+                  <tr><td>1942</td><td>Michael Curtiz</td><td>Casablanca</td></tr>
+                  <tr><td>1942</td><td>William A. Seiter</td><td>You Were Never Lovelier</td></tr>
+                  <tr><td>1943</td><td>Herbert Selpin</td><td>Titanic</td></tr>
+                  <tr><td>1943</td><td>Irving Cummings</td><td>What a woman!</td></tr>
+                  <tr><td>1943</td><td>Luchino Visconti</td><td>Ossessione</td></tr>
+                  <tr><td>1943</td><td>Michael Powell</td><td>Life and Death of Colonel Blimp</td></tr>
+                  <tr><td>1944</td><td>Vincente Minnelli</td><td>Meet Me in St. Louis</td></tr>
+                  <tr><td>1945</td><td>David Lean</td><td>A Brief Encounter</td></tr>
+                  <tr><td>1946</td><td>Frank Capra</td><td>It's a Wonderful Life</td></tr>
+                  <tr><td>1946</td><td>Howard Hawks</td><td>Big Sleep</td></tr>
+                  <tr><td>1946</td><td>William Wyler</td><td>Best Years of Our Lives</td></tr>
+                  <tr><td>1947</td><td>Chester Erskine</td><td>Egg and I</td></tr>
+                  <tr><td>1948</td><td>Alfred Hitchcock</td><td>Rope</td></tr>
+                  <tr><td>1948</td><td>Vittorio De Sica</td><td>Bicycle Thief</td></tr>
+                  <tr><td>1949</td><td>Bernando Bertolucci</td><td>Last Tango in Paris</td></tr>
+                  <tr><td>1949</td><td>Carol Reed</td><td>Third Man</td></tr>
+                  <tr><td>1949</td><td>Robert Rossen</td><td>All the King's Men</td></tr>
+                  <tr><td>1949</td><td>William Wyler</td><td>Heiress</td></tr>
+                  <tr><td>1950</td><td>Akira Kurosawa</td><td>Rashomon</td></tr>
+                  <tr><td>1950</td><td>Joseph Mankiewicz</td><td>All About Eve</td></tr>
+                  <tr><td>1951</td><td>Alfred Hitchcock</td><td>Strangers on a Train</td></tr>
+                  <tr><td>1951</td><td>Billy Wilder</td><td>Ace in the Hole</td></tr>
+                  <tr><td>1951</td><td>Vincente Minnelli</td><td>An American in Paris</td></tr>
+                  <tr><td>1952</td><td>Stanley Donen, Gene Kelly</td><td>Singin' in the Rain</td></tr>
+                  <tr><td>1953</td><td>Stanley Kubrick</td><td>Fear and Desire</td></tr>
+                  <tr><td>1953</td><td>William Wyler</td><td>Roman Holiday</td></tr>
+                  <tr><td>1954</td><td>Akira Kurosawa</td><td>Seven Samurai</td></tr>
+                  <tr><td>1954</td><td>Alfred Hitchcock</td><td>Rear Window</td></tr>
+                  <tr><td>1954</td><td>Nicholas Ray</td><td>Johnny Guitar</td></tr>
+                  <tr><td>1955</td><td>Charles Laughton</td><td>Night of the Hunter</td></tr>
+                  <tr><td>1955</td><td>David Lean</td><td>Summertime</td></tr>
+                  <tr><td>1955</td><td>Douglas Sirk</td><td>All That Heaven Allows</td></tr>
+                  <tr><td>1955</td><td>Ingmar Bergman</td><td>Smiles of a Summer Night</td></tr>
+                  <tr><td>1955</td><td>Michael Mann</td><td>Heat</td></tr>
+                  <tr><td>1955</td><td>Nicholas Ray</td><td>Rebel Without a Cause</td></tr>
+                  <tr><td>1957</td><td>Ingmar Bergman</td><td>Seventh Seal</td></tr>
+                  <tr><td>1957</td><td>Sidney Lumet</td><td>12 Angry Men</td></tr>
+                  <tr><td>1957</td><td>Stanley Donen</td><td>Funny Face</td></tr>
+                  <tr><td>1957</td><td>Stanley Kubrick</td><td>Paths of Glory</td></tr>
+                  <tr><td>1958</td><td>Alfred Hitchcock</td><td>Vertigo</td></tr>
+                  <tr><td>1958</td><td>Jacques Tati</td><td>Mon Oncle</td></tr>
+                  <tr><td>1958</td><td>Sergei Eisenstein; M. Filimonova</td><td>Ivan the Terrible, I & II</td></tr>
+                  <tr><td>1959</td><td>Billy Wilder</td><td>Some Like It Hot</td></tr>
+                  <tr><td>1959</td><td>Douglas Sirk</td><td>Imitation of Life</td></tr>
+                  <tr><td>1959</td><td>William Wyler</td><td>Ben Hur</td></tr>
+                  <tr><td>1960</td><td>Alfred Hitchcock</td><td>Psycho</td></tr>
+                  <tr><td>1960</td><td>Billy Wilder</td><td>Apartment</td></tr>
+                  <tr><td>1960</td><td>Charles Crichton</td><td>Battle of the Sexes</td></tr>
+                  <tr><td>1960</td><td>Federico Fellini</td><td>La Dolce Vita</td></tr>
+                  <tr><td>1960</td><td>Stanley Kubrick</td><td>Spartacus</td></tr>
+                  <tr><td>1962</td><td>Agnes Varda</td><td>Cleo from 5 to 7</td></tr>
+                  <tr><td>1962</td><td>David Lean</td><td>Lawrence of Arabia</td></tr>
+                  <tr><td>1962</td><td>François Truffaut</td><td>Jules et Jim</td></tr>
+                  <tr><td>1962</td><td>Masaki Kobayashi</td><td>Harakiri</td></tr>
+                  <tr><td>1962</td><td>Stanley Kubrick</td><td>Lolita</td></tr>
+                  <tr><td>1962</td><td>Stanley Kubrick</td><td>Fear and Desire</td></tr>
+                  <tr><td>1963</td><td>Alfred Hitchcock</td><td>The Birds</td></tr>
+                  <tr><td>1963</td><td>Federico Fellini</td><td>8 1/2</td></tr>
+                  <tr><td>1963</td><td>Harold Pinter</td><td>Lover</td></tr>
+                  <tr><td>1964</td><td>Stanley Kubrick</td><td>Dr. Strangelove: Or How I Learned to Stop Worrying and Love the Bomb</td></tr>
+                  <tr><td>1965</td><td>Milos Forman</td><td>Loves of a Blonde</td></tr>
+                  <tr><td>1966</td><td>Gillo Pontecorvo</td><td>Battle of Algiers</td></tr>
+                  <tr><td>1966</td><td>Ingmar Bergman</td><td>Persona</td></tr>
+                  <tr><td>1966</td><td>Sergio Leone</td><td>Good, The Bad, and The Ugly</td></tr>
+                  <tr><td>1966</td><td>William Wyler</td><td>How to Steal a Million</td></tr>
+                  <tr><td>1967</td><td>Luis Buñuel</td><td>Belle de Jour</td></tr>
+                  <tr><td>1967</td><td>Stanley Kramer</td><td>Guess Who's Coming to Dinner?</td></tr>
+                  <tr><td>1968</td><td>Franco Zeffirelli</td><td>Romeo and Juliet</td></tr>
+                  <tr><td>1968</td><td>Stanley Kubrick</td><td>2001: A Space Odyssey</td></tr>
+                  <tr><td>1970</td><td>Arthur Hiller</td><td>Love Story</td></tr>
+                  <tr><td>1971</td><td>Stanley Kubrick</td><td>A Clockwork Orange</td></tr>
+                  <tr><td>1972</td><td>Andrei Tarkovsky</td><td>Solaris</td></tr>
+                  <tr><td>1972</td><td>Francis Ford Coppola</td><td>The Godfather</td></tr>
+                  <tr><td>1972</td><td>Ingmar Bergman</td><td>Cries and Whispers</td></tr>
+                  <tr><td>1972</td><td>Luis Buñuel</td><td>Discreet Charm of the Bourgeoisie</td></tr>
+                  <tr><td>1972</td><td>Peter H. Hunt</td><td>1776</td></tr>
+                  <tr><td>1972</td><td>Werner Herzog</td><td>Aguirre: The Wrath of God</td></tr>
+                  <tr><td>1973</td><td>Alejandro Jodorowsky</td><td>The Holy Mountain</td></tr>
+                  <tr><td>1974</td><td>Martin Scorsese</td><td>Alice Doesn't Live Here Anymore</td></tr>
+                  <tr><td>1974</td><td>Roman Polanski</td><td>Chinatown</td></tr>
+                  <tr><td>1975</td><td>Andrei Tarkovsky</td><td>The Mirror</td></tr>
+                  <tr><td>1975</td><td>Dick Richards</td><td>Farewell, My Lovely</td></tr>
+                  <tr><td>1975</td><td>Sidney Lumet</td><td>Dog Day Afternoon</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <button class="collapsible collapsed">Art <span class="heart">♥</span></button>
+          <div class="content collapsed">
+            <div class="scroll-table">
+              <table class="library-table" style="margin-bottom:24px;">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Artist</th>
+                    <th>Title</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
     <script>
-      const LITERATURE_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGK8ELrkZ8l6Fn0F1uSUiDVOz6Wu60mwQQmZ3joolI71hL4eY59RS4x8epNxvahnzi5c5Ve8n7ocIS/pub?gid=0&single=true&output=csv';
-      const CINEMA_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGK8ELrkZ8l6Fn0F1uSUiDVOz6Wu60mwQQmZ3joolI71hL4eY59RS4x8epNxvahnzi5c5Ve8n7ocIS/pub?gid=188241204&single=true&output=csv';
-
-      async function loadLiteratureData() {
-        try {
-          const response = await fetch(LITERATURE_CSV);
-          const csvText = await response.text();
-          const data = Papa.parse(csvText, { header: true }).data;
-          const tbody = document.getElementById('literature-body');
-          tbody.innerHTML = '';
-          data.forEach(row => {
-            if ((row.Date || row.Author || row.Title) && !(row.Rating || row.Director || row.Year)) {
-              const tr = document.createElement('tr');
-              tr.innerHTML = `
-                <td>${row.Date || ''}</td>
-                <td>${row.Author || ''}</td>
-                <td>${row.Title || ''}</td>
-              `;
-              tbody.appendChild(tr);
-            }
-          });
-        } catch (error) {
-          console.error('Error loading Literature data:', error);
-        }
-      }
-
-      async function loadCinemaData() {
-        try {
-          const response = await fetch(CINEMA_CSV);
-          const csvText = await response.text();
-          const data = Papa.parse(csvText, { header: true }).data;
-          const tbody = document.getElementById('cinema-body');
-          tbody.innerHTML = '';
-          data.forEach(row => {
-            if (row.Rating || row.Director || row.Title || row.Year) {
-              const tr = document.createElement('tr');
-              tr.innerHTML = `
-                <td>${row.Rating || ''}</td>
-                <td>${row.Director || ''}</td>
-                <td>${row.Title || ''}</td>
-                <td>${row.Year || ''}</td>
-              `;
-              tbody.appendChild(tr);
-            }
-          });
-        } catch (error) {
-          console.error('Error loading Cinema data:', error);
-        }
-      }
-
-      document.addEventListener('DOMContentLoaded', function() {
-        loadLiteratureData();
-        loadCinemaData();
-        // Load data
-        loadAllData();
-
-        // Collapsible functionality
-        const collapsibles = document.getElementsByClassName("collapsible");
-        for (let i = 0; i < collapsibles.length; i++) {
-          collapsibles[i].addEventListener("click", function() {
-            const content = this.nextElementSibling;
-            if (content.classList.contains("collapsed")) {
-              content.classList.remove("collapsed");
-            } else {
-              content.classList.add("collapsed");
-            }
-          });
-        }
-
-        // Table sorting functionality
-        const tables = document.getElementsByClassName("library-table");
-        for (let table of tables) {
-          const headers = table.getElementsByTagName("th");
-          for (let header of headers) {
-            header.addEventListener("click", function() {
-              const sortBy = this.getAttribute("data-sort");
-              const tbody = table.getElementsByTagName("tbody")[0];
-              const rows = Array.from(tbody.getElementsByTagName("tr"));
-              
-              // Remove sort classes from all headers
-              Array.from(headers).forEach(h => {
-                h.classList.remove("sort-asc", "sort-desc");
-              });
-
-              // Determine sort direction
-              const isAsc = !this.classList.contains("sort-asc");
-              this.classList.toggle("sort-asc", isAsc);
-              this.classList.toggle("sort-desc", !isAsc);
-
-              // Sort rows
-              rows.sort((a, b) => {
-                const aValue = a.getElementsByTagName("td")[Array.from(headers).indexOf(this)].textContent;
-                const bValue = b.getElementsByTagName("td")[Array.from(headers).indexOf(this)].textContent;
-                
-                if (sortBy === "date") {
-                  // Sort dates
-                  return isAsc ? new Date(aValue) - new Date(bValue) : new Date(bValue) - new Date(aValue);
-                } else if (sortBy === "rating") {
-                  // Sort ratings numerically
-                  return isAsc ? (parseFloat(aValue) || 0) - (parseFloat(bValue) || 0) : (parseFloat(bValue) || 0) - (parseFloat(aValue) || 0);
-                } else {
-                  // Sort text
-                  return isAsc ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
-                }
-              });
-
-              // Reorder rows
-              rows.forEach(row => tbody.appendChild(row));
-            });
+    document.addEventListener('DOMContentLoaded', function() {
+      const collapsibles = document.getElementsByClassName("collapsible");
+      for (let i = 0; i < collapsibles.length; i++) {
+        collapsibles[i].addEventListener("click", function() {
+          this.classList.toggle("collapsed");
+          const content = this.nextElementSibling;
+          if (content.classList.contains("collapsed")) {
+            content.classList.remove("collapsed");
+          } else {
+            content.classList.add("collapsed");
           }
+        });
+      }
+
+      const tables = document.getElementsByClassName("library-table");
+      for (let table of tables) {
+        const headers = table.getElementsByTagName("th");
+        for (let i = 0; i < headers.length; i++) {
+          headers[i].addEventListener("click", function() {
+            const tbody = table.getElementsByTagName("tbody")[0];
+            const rows = Array.from(tbody.getElementsByTagName("tr"));
+            const isAsc = !this.classList.contains("sort-asc");
+            Array.from(headers).forEach(h => h.classList.remove("sort-asc", "sort-desc"));
+            this.classList.toggle("sort-asc", isAsc);
+            this.classList.toggle("sort-desc", !isAsc);
+            rows.sort((a, b) => {
+              const aValue = a.getElementsByTagName("td")[i].textContent.trim().toLowerCase();
+              const bValue = b.getElementsByTagName("td")[i].textContent.trim().toLowerCase();
+              if (aValue < bValue) return isAsc ? -1 : 1;
+              if (aValue > bValue) return isAsc ? 1 : -1;
+              return 0;
+            });
+            rows.forEach(row => tbody.appendChild(row));
+          });
         }
-      });
+      }
+    });
     </script>
   </body>
 </html> 

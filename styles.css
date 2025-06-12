@@ -88,7 +88,7 @@ a:visited {
 .collapsible {
   cursor: pointer;
   padding: 0;
-  margin: 0;
+  margin: 0 0 32px 0;
   width: 100%;
   border: none;
   text-align: left;
@@ -103,13 +103,18 @@ a:visited {
 }
 
 .collapsible::after {
-  content: '▼';
-  font-size: 0.8em;
+  content: '♥';
+  font-size: 1em;
+  margin-left: 10px;
   transition: transform 0.3s ease;
 }
 
 .collapsible.collapsed::after {
   transform: rotate(-90deg);
+}
+
+.heart {
+  display: none;
 }
 
 .content {
@@ -121,7 +126,6 @@ a:visited {
 }
 
 .content.collapsed {
-  max-height: 0;
   display: none;
 }
 
@@ -136,11 +140,17 @@ a:visited {
 }
 
 /* Table styles */
+.scroll-table {
+  max-height: 340px;
+  overflow-y: auto;
+  margin-bottom: 24px;
+}
+
 .library-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 2em;
 }
 
 .library-table th {
@@ -151,6 +161,10 @@ a:visited {
   border-bottom: 1px solid #ddd;
   vertical-align: bottom;
   line-height: 1;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
 }
 
 .library-table th:hover {
@@ -194,8 +208,10 @@ a:visited {
   vertical-align: middle;
 }
 
-.library-table th[data-sort="date"] {
-  min-width: 80px;
+.library-table th[data-sort="date"],
+.library-table th:first-child {
+  min-width: 60px;
+  width: 80px;
 }
 
 .library-table th[data-sort="author"],
@@ -204,14 +220,10 @@ a:visited {
   min-width: 150px;
 }
 
-.library-table th[data-sort="title"] {
-  min-width: 200px;
-}
-
-.scroll-table {
-  max-height: 400px;
-  overflow-y: auto;
-  margin-bottom: 1em;
+.library-table th[data-sort="title"],
+.library-table th:last-child {
+  min-width: 220px;
+  width: 300px;
 }
 
 .scroll-table .library-table {
