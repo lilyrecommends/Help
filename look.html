@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Look! - LB</title>
+    <style>
+      .photo-gallery {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 20px 0;
+        scrollbar-width: thin;
+        scrollbar-color: #888 #f1f1f1;
+      }
+      .photo-gallery::-webkit-scrollbar {
+        height: 8px;
+      }
+      .photo-gallery::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+      }
+      .photo-gallery::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+      .photo-gallery::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      .photo-item {
+        flex: 0 0 300px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      .photo-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .photo-item:hover img {
+        transform: scale(1.05);
+      }
+      .photo-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="website">
+      <h1 style="text-align: center"><a href="index.html" style="text-decoration: none; color: inherit;">LB</a></h1>
+      <div class="topnav">
+        <a href="learning.html">Learning</a>
+        <a href="library.html">Library</a>
+        <a href="log.html">Log</a>
+        <a href="lessons.html">Lessons</a>
+        <a class="active" href="look.html">Look!</a>
+      </div>
+      
+      <div class="main-section-container">
+        <div class="main-section">
+          <button class="collapsible">Clouds</button>
+          <div class="content">
+            <div class="photo-gallery">
+              <!-- Cloud photos will go here -->
+            </div>
+          </div>
+
+          <button class="collapsible">Shadows</button>
+          <div class="content">
+            <div class="photo-gallery">
+              <!-- Shadow photos will go here -->
+            </div>
+          </div>
+
+          <button class="collapsible">Sample</button>
+          <div class="content">
+            <div class="photo-gallery">
+              <!-- Sample photos will go here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Add collapsible functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const collapsibles = document.getElementsByClassName("collapsible");
+        
+        for (let i = 0; i < collapsibles.length; i++) {
+          collapsibles[i].addEventListener("click", function() {
+            this.classList.toggle("collapsed");
+            const content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+              content.style.maxHeight = null;
+              content.classList.add("collapsed");
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+              content.classList.remove("collapsed");
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html> 
