@@ -45,9 +45,121 @@
         display: block;
       }
       .main-section {
-        width: 100%;
-        max-width: 600px;
+        width: 600px;
         margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .photo-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 40px;
+      }
+      .photo-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .photo-box {
+        border: 1px solid #222;
+        width: 120px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1em;
+        margin: 0;
+        background: #fff;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin: 0 auto 40px auto;
+        max-width: 600px;
+      }
+      .gallery-thumb {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        cursor: pointer;
+        /* border: 1px solid #222; */
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .gallery-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: filter 0.2s;
+        display: block;
+      }
+      /* Overlay for full image on hover */
+      .gallery-thumb:hover::after {
+        content: none;
+      }
+      .gallery-thumb:hover img.full-preview {
+        display: none;
+      }
+      .full-image-popup {
+        display: none !important;
+      }
+      .static-collapsible {
+        cursor: default;
+        background: none;
+        border: none;
+        font-size: 1em;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        margin: 32px 0 16px 0;
+        padding: 0;
+        text-align: left;
+        display: block;
+      }
+      .collapsible {
+        cursor: pointer;
+        padding: 0;
+        margin: 0 0 32px 0;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        background: none;
+        font-weight: bold;
+        font-size: 1em;
+        font-family: "Times New Roman", Times, serif;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 1;
+      }
+      .collapsible::after {
+        content: '♥';
+        font-size: 1em;
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+      }
+      .collapsible.collapsed::after {
+        transform: rotate(-90deg);
+      }
+      .content {
+        max-height: 1000px;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        margin-top: 10px;
+        display: block;
+      }
+      .content.collapsed {
+        display: none;
+      }
+      .scrollable-gallery {
+        max-height: 400px;
+        overflow-y: auto;
+        padding-right: 8px;
       }
     </style>
   </head>
@@ -64,34 +176,212 @@
       
       <div class="main-section-container">
         <div class="main-section">
-          <button class="collapsible collapsed">Clouds</button>
+          <button class="collapsible collapsed">Light</button>
           <div class="content collapsed">
-            <div class="photo-gallery">
-              <div class="photo-item">
-                <img src="images/clouds/IMG_1559.JPG" alt="Clouds 1">
-              </div>
-              <div class="photo-item">
-                <img src="images/clouds/IMG_1270.JPG" alt="Clouds 2">
-              </div>
-              <div class="photo-item">
-                <img src="images/clouds/IMG_1795.JPG" alt="Clouds 3">
-              </div>
+            <div class="gallery-grid scrollable-gallery">
+              <div class="gallery-thumb"><img src="images/light/IMG_0575.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_0799.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_5518.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_1832.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_4678.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_5258.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_5328.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_9671.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_8894.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_5480.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_7752.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_8130.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_8180.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_7751.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_7893.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_7943.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_0837.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_2456.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_3422.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_0811.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_3126.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_0440.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_0788.PNG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_5041.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_0041.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_4886.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_0173.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_0931.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_1229.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_1230.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_1552.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_2803.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_3158.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_4113.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_1070.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_2132.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_1342.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_3566.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_4616.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_5616.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_5967.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_7315.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_8915.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_8949.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_E3751.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_E4972.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_1484.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_1510.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_1782.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_2933.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_4724.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_4820.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_4980.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_5519.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_6948.JPG" alt="Light" /></div>
+              <div class="gallery-thumb"><img src="images/light/IMG_8942.JPG" alt="Light" /></div>
             </div>
           </div>
 
-          <button class="collapsible collapsed">Shadows</button>
+          <button class="collapsible collapsed">Human</button>
           <div class="content collapsed">
-            <div class="photo-gallery">
-              <div class="photo-item">
-                <img src="images/shadows/IMG_1073.JPG" alt="Shadows">
-              </div>
+            <div class="gallery-grid scrollable-gallery">
+              <div class="gallery-thumb"><img src="images/human/IMG_1214.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_8043.jpeg" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_0549.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_0552.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_3147.jpeg" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_3979.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_4880.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_3978.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_3980.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_4879.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_2765.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_3460.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_4881.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_4882.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_1506.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_1509.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_0859 copy.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_4365.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_8728.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_8731.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_9797.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_7761.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_0665.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_1985.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_0808.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_0887.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_0859.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_1961.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_3999.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_4002.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_2606.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_2448.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_1076.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_1079.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_4001.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/litt hore.jpg" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_2615.JPG" alt="Human" /></div>
+              <div class="gallery-thumb"><img src="images/human/IMG_2616.JPG" alt="Human" /></div>
             </div>
           </div>
 
-          <button class="collapsible collapsed">Sample</button>
+          <button class="collapsible collapsed">Flora</button>
           <div class="content collapsed">
-            <div class="photo-gallery">
-              <!-- Sample photos will go here -->
+            <div class="gallery-grid scrollable-gallery">
+              <div class="gallery-thumb"><img src="images/flora/IMG_1220.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_1421.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_6600.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_7106.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_7657.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_1931.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_1025.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_5063.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_0011.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_0013.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_0014.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_5209.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_5214.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_2019.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_2403.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_2780.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_3017.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_3050.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_3180.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_3466.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_3732.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_4009.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_4024.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_1297.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_2537.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_2910.JPG" alt="Flora" /></div>
+              <div class="gallery-thumb"><img src="images/flora/IMG_E3492.JPG" alt="Flora" /></div>
+            </div>
+          </div>
+
+          <button class="collapsible collapsed">Infrastructure</button>
+          <div class="content collapsed">
+            <div class="gallery-grid scrollable-gallery">
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_1021.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_2102.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_4009.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_4216.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/9aee983a-7e7f-44d6-8037-5b74da9ce523.jpg" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_2258.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_1551.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_3655.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_2671.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_2866.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_3401.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_3404.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_3409.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_4870.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_6292.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_6293.JPG" alt="Infrastructure" /></div>
+              <div class="gallery-thumb"><img src="images/infrastructure/IMG_3567.JPG" alt="Infrastructure" /></div>
+            </div>
+          </div>
+
+          <button class="collapsible collapsed">Food</button>
+          <div class="content collapsed">
+            <div class="gallery-grid scrollable-gallery">
+              <div class="gallery-thumb"><img src="images/food/IMG_1275.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_1835.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_5874.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_6150.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_6252.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_6418.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_8873.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_0039.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_3195.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_4186.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_5015.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_5916.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_6243.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_2055.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_2381.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_4080.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_4904.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_3966.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_4054.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_1140.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_0354.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_4297.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_4611.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_5638.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_8721.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_9001.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_9600.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_4116.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_7370.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_2325.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_0848.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_2688.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_0555.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_0556.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_0983.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_1160.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_0882.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_3329.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_3351.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_2932.JPG" alt="Food" /></div>
+              <div class="gallery-thumb"><img src="images/food/IMG_1438.JPG" alt="Food" /></div>
             </div>
           </div>
         </div>
@@ -99,28 +389,48 @@
     </div>
 
     <script>
-      // Add collapsible functionality
+      // Add full image popup on hover
+      document.querySelectorAll('.gallery-thumb').forEach(function(thumb) {
+        const img = thumb.querySelector('img');
+        const fullImg = document.createElement('div');
+        fullImg.className = 'full-image-popup';
+        const big = document.createElement('img');
+        big.src = img.src;
+        big.alt = img.alt;
+        fullImg.appendChild(big);
+        thumb.appendChild(fullImg);
+      });
+
       document.addEventListener('DOMContentLoaded', function() {
-        const collapsibles = document.getElementsByClassName("collapsible");
-        for (let i = 0; i < collapsibles.length; i++) {
-          collapsibles[i].addEventListener("click", function() {
+        const collapsibles = document.querySelectorAll('.collapsible');
+        collapsibles.forEach(function(btn) {
+          btn.addEventListener('click', function() {
             // Close all other sections
-            for (let j = 0; j < collapsibles.length; j++) {
-              if (collapsibles[j] !== this) {
-                collapsibles[j].classList.add("collapsed");
-                collapsibles[j].nextElementSibling.classList.add("collapsed");
+            collapsibles.forEach(function(otherBtn) {
+              if (otherBtn !== btn) {
+                otherBtn.classList.add('collapsed');
+                if (otherBtn.nextElementSibling) {
+                  otherBtn.nextElementSibling.classList.add('collapsed');
+                }
               }
-            }
+            });
             // Toggle this section
-            this.classList.toggle("collapsed");
-            const content = this.nextElementSibling;
-            if (this.classList.contains("collapsed")) {
-              content.classList.add("collapsed");
+            btn.classList.toggle('collapsed');
+            const content = btn.nextElementSibling;
+            if (btn.classList.contains('collapsed')) {
+              content.classList.add('collapsed');
             } else {
-              content.classList.remove("collapsed");
+              content.classList.remove('collapsed');
             }
           });
-        }
+        });
+        // Start all collapsed
+        collapsibles.forEach(function(btn) {
+          btn.classList.add('collapsed');
+          if (btn.nextElementSibling) {
+            btn.nextElementSibling.classList.add('collapsed');
+          }
+        });
       });
     </script>
   </body>
