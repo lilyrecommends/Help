@@ -8,28 +8,13 @@
     <style>
       .photo-gallery {
         display: flex;
-        overflow-x: auto;
+        flex-direction: column;
         gap: 20px;
-        padding: 20px 0;
-        scrollbar-width: thin;
-        scrollbar-color: #888 #f1f1f1;
-      }
-      .photo-gallery::-webkit-scrollbar {
-        height: 8px;
-      }
-      .photo-gallery::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 4px;
-      }
-      .photo-gallery::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-      }
-      .photo-gallery::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        padding: 0;
+        margin: 0;
       }
       .photo-item {
-        flex: 0 0 300px;
+        width: 100%;
         position: relative;
         overflow: hidden;
         border-radius: 8px;
@@ -37,22 +22,33 @@
       }
       .photo-item img {
         width: 100%;
-        height: 300px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
+        height: auto;
+        display: block;
       }
-      .photo-item:hover img {
-        transform: scale(1.05);
+      .content {
+        max-height: 400px;
+        overflow-y: auto;
+        transition: max-height 0.3s ease-out;
+        margin-top: 10px;
+        display: block;
+        margin-bottom: 32px;
       }
-      .photo-caption {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0,0,0,0.7);
-        color: white;
-        padding: 10px;
-        font-size: 14px;
+      .content.collapsed {
+        max-height: 0;
+        padding: 0;
+        margin: 0;
+        display: block;
+      }
+      .collapsible.collapsed + .content {
+        max-height: 0;
+        padding: 0;
+        margin: 0;
+        display: block;
+      }
+      .main-section {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
       }
     </style>
   </head>
@@ -69,28 +65,32 @@
       
       <div class="main-section-container">
         <div class="main-section">
-          <button class="collapsible">Clouds</button>
-          <div class="content">
+          <button class="collapsible collapsed">Clouds</button>
+          <div class="content collapsed">
             <div class="photo-gallery">
               <div class="photo-item">
-                <img src="images/clouds/IMG_1559.JPG" alt="Clouds">
-                <div class="photo-caption">Clouds</div>
+                <img src="images/clouds/IMG_1559.JPG" alt="Clouds 1">
+              </div>
+              <div class="photo-item">
+                <img src="images/clouds/IMG_1270.JPG" alt="Clouds 2">
+              </div>
+              <div class="photo-item">
+                <img src="images/clouds/IMG_1795.JPG" alt="Clouds 3">
               </div>
             </div>
           </div>
 
-          <button class="collapsible">Shadows</button>
-          <div class="content">
+          <button class="collapsible collapsed">Shadows</button>
+          <div class="content collapsed">
             <div class="photo-gallery">
               <div class="photo-item">
                 <img src="images/shadows/IMG_1073.JPG" alt="Shadows">
-                <div class="photo-caption">Shadows</div>
               </div>
             </div>
           </div>
 
-          <button class="collapsible">Sample</button>
-          <div class="content">
+          <button class="collapsible collapsed">Sample</button>
+          <div class="content collapsed">
             <div class="photo-gallery">
               <!-- Sample photos will go here -->
             </div>
@@ -103,16 +103,21 @@
       // Add collapsible functionality
       document.addEventListener('DOMContentLoaded', function() {
         const collapsibles = document.getElementsByClassName("collapsible");
-        
         for (let i = 0; i < collapsibles.length; i++) {
           collapsibles[i].addEventListener("click", function() {
+            // Close all other sections
+            for (let j = 0; j < collapsibles.length; j++) {
+              if (collapsibles[j] !== this) {
+                collapsibles[j].classList.add("collapsed");
+                collapsibles[j].nextElementSibling.classList.add("collapsed");
+              }
+            }
+            // Toggle this section
             this.classList.toggle("collapsed");
             const content = this.nextElementSibling;
-            if (content.style.maxHeight) {
-              content.style.maxHeight = null;
+            if (this.classList.contains("collapsed")) {
               content.classList.add("collapsed");
             } else {
-              content.style.maxHeight = content.scrollHeight + "px";
               content.classList.remove("collapsed");
             }
           });
