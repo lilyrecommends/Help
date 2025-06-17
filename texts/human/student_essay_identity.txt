@@ -1,0 +1,19 @@
+Student Essay on Identity
+by Sarah M.
+October 2024
+
+This is where the full text of the student work would go. You can paste in their essays, creative writing, or any other text-based work. The preview shows just a snippet, but clicking opens the full text in a readable modal.
+
+This preserves your gallery layout while allowing both visual and textual student work to coexist beautifully.
+
+The key advantages of this approach:
+1. Maintains your existing design aesthetic
+2. No nested scrolling issues
+3. Text cards blend seamlessly with image thumbnails
+4. Full text is easily readable in the modal
+5. You can organize text files in folders just like images
+
+To add more student work, simply:
+- Save their text as .txt files in the texts/human/ folder
+- Add new text cards to the HTML with the appropriate title and preview
+- The onclick function handles displaying the full content 
