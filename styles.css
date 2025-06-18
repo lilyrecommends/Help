@@ -237,3 +237,83 @@ a:visited {
   margin-bottom: 24px;
   padding-right: 8px;
 }
+
+/* Mobile responsive design */
+@media screen and (max-width: 768px) {
+  .website {
+    border-width: 20px;
+  }
+  
+  .main-section {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .main-section-container {
+    margin-top: 40px;
+  }
+  
+  .topnav a {
+    margin: 0px 15px;
+    font-size: 14px;
+  }
+  
+  .scroll-table {
+    max-height: 300px;
+  }
+  
+  .library-table th,
+  .library-table td {
+    padding: 6px 4px;
+    font-size: 14px;
+  }
+  
+  .library-table th[data-sort="date"],
+  .library-table th:first-child {
+    min-width: 50px;
+    width: 60px;
+  }
+  
+  .library-table th[data-sort="author"],
+  .library-table th[data-sort="director"],
+  .library-table th[data-sort="artist"] {
+    min-width: 100px;
+  }
+  
+  .library-table th[data-sort="title"],
+  .library-table th:last-child {
+    min-width: 150px;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .website {
+    border-width: 10px;
+  }
+  
+  .main-section {
+    padding: 0 15px;
+  }
+  
+  .topnav a {
+    margin: 0px 8px;
+    font-size: 12px;
+  }
+  
+  .main-section-container {
+    margin-top: 20px;
+  }
+  
+  .collapsible {
+    font-size: 16px;
+    margin: 0 0 24px 0;
+  }
+  
+  .library-table th,
+  .library-table td {
+    padding: 4px 2px;
+    font-size: 12px;
+  }
+}
