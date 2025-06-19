@@ -286,6 +286,15 @@ a:visited {
     min-width: 150px;
     width: 200px;
   }
+  
+  /* Override heading colors on mobile */
+  h1, h2, h3, h4, h5, h6 {
+    color: #003300 !important;
+  }
+  
+  .collapsible {
+    color: #003300 !important;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -315,5 +324,14 @@ a:visited {
   .library-table td {
     padding: 4px 2px;
     font-size: 12px;
+  }
+  
+  /* Override heading colors on mobile */
+  h1, h2, h3, h4, h5, h6 {
+    color: #003300 !important;
+  }
+  
+  .collapsible {
+    color: #003300 !important;
   }
 }
