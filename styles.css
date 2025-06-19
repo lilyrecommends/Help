@@ -335,3 +335,41 @@ a:visited {
     color: #003300 !important;
   }
 }
+
+/* Responsive gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 0 auto 40px auto;
+  max-width: 600px;
+}
+
+.gallery-thumb {
+  margin-bottom: 12px;
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    max-width: 100%;
+  }
+  .gallery-thumb {
+    margin-bottom: 8px;
+  }
+}
