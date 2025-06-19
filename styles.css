@@ -354,6 +354,9 @@ a:visited {
   width: 100%;
   height: auto;
   display: block;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media screen and (max-width: 768px) {
