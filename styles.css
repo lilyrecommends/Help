@@ -220,10 +220,14 @@ a:visited {
   min-width: 150px;
 }
 
-.library-table th[data-sort="title"],
-.library-table th:last-child {
+.library-table th[data-sort="title"] {
   min-width: 220px;
-  width: 300px;
+  width: 400px;
+}
+
+.library-table th:last-child {
+  min-width: 50px;
+  width: 85px;
 }
 
 .scroll-table .library-table {

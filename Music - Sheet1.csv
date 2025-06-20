@@ -1,70 +1,102 @@
-Date,Artist,Album,Hyperlink,Genre
-1888,"Mahler, Gustave",Symphony 2,,Classical
-1901,"Mahler, Gustave",Symphony 5,,Classical
-1903,"Mahler, Gustave",Symphony 6,,Classical
-1906,"Mahler, Gustave",Symphony 8,,Classical
-1908,"Mahler, Gustave",Symphony 9,,Classical
-1910,"Mahler, Gustave",Symphony 10,,Classical
-1908,"Mahler, Gustave",Das Lied von der Erde,,Classical
-1799,"Beethoven, Ludwig van",Symphony 1,,Classical
-1801,"Beethoven, Ludwig van",Symphony 2,,Classical
-1803,"Beethoven, Ludwig van","Symphony 3 ""Eroica""",,Classical
-1806,"Beethoven, Ludwig van",Symphony 4 ,,Classical
-1807,"Beethoven, Ludwig van","Symphony 5 ""Fate""",,Classical
-1807,"Beethoven, Ludwig van","Symphony 6 ""Pastoral""",,Classical
-1811,"Beethoven, Ludwig van",Symphony 7,,Classical
-1822,"Beethoven, Ludwig van","Symphony 9 ""Choral""",,Classical
-1795,"Beethoven, Ludwig van",Concerto: piano 1,,Classical
-1788,"Beethoven, Ludwig van",Concerto: piano 2,,Classical
-1800,"Beethoven, Ludwig van",Concerto: piano 3,,Classical
-1804,"Beethoven, Ludwig van",Concerto: piano 4,,Classical
-1809,"Beethoven, Ludwig van",Concerto: piano 5,,Classical
-1806,"Beethoven, Ludwig van",Concerto: violin 1,,Classical
-1813,"Beethoven, Ludwig van",Wellington's Victory,,Classical
-1782,"Beethoven, Ludwig van",Piano sonatas,,Classical
-1725,"Bach, Johann Sebastian ",Cantatas,,Classical
-1724,"Bach, Johann Sebastian ",Mass: Mass in B minor,,Classical
-1724,"Bach, Johann Sebastian ",Mass: St John Passion,,Classical
-1720,"Bach, Johann Sebastian ",Inventions and sinfonias,,Classical
-1722,"Bach, Johann Sebastian ",French Suites,,Classical
-1722,"Bach, Johann Sebastian ",Well-Tempered Clavier,,Classical
-1710,"Bach, Johann Sebastian ",Preludes and Fugues,,Classical
-1713,"Bach, Johann Sebastian ",Piano concertos (concerto for solo keyboard),,Classical
-1741,"Bach, Johann Sebastian ",Goldberg Variations,,Classical
-1720,"Bach, Johann Sebastian ",Cello suites,,Classical
-1725,"Bach, Johann Sebastian ",Harpischord concertos,,Classical
-1721,"Bach, Johann Sebastian ",Brandenburg concertos,,Classical
-1713,"Bach, Johann Sebastian ",Canons,,Classical
-1768,"Mozart, Wolfgang Amadeus",Mass: Missa Brevis,,Classical
-1791,"Mozart, Wolfgang Amadeus",Requiem,,Classical
-1785,"Mozart, Wolfgang Amadeus",Opera: The Marriage of Figaro,,Classical
-1787,"Mozart, Wolfgang Amadeus",Opera: Don Giovanni,,Classical
-1788,"Mozart, Wolfgang Amadeus","Symphony 41 ""Jupiter""",,Classical
-1773,"Mozart, Wolfgang Amadeus",Symphony 25,,Classical
-1786,"Mozart, Wolfgang Amadeus","Symphony 38 ""Prague""",,Classical
-1788,"Mozart, Wolfgang Amadeus",Symphony 40,,Classical
-1788,"Mozart, Wolfgang Amadeus",Symphony 39,,Classical
-1774,"Mozart, Wolfgang Amadeus",Symphony 29,,Classical
-1778,"Mozart, Wolfgang Amadeus",Symphony 31,,Classical
-1782,"Mozart, Wolfgang Amadeus",Symphony 35,,Classical
-1783,"Mozart, Wolfgang Amadeus",Symphony 36,,Classical
-1771,"Mozart, Wolfgang Amadeus",Symphony 11,,Classical
-1772,"Mozart, Wolfgang Amadeus",Symphony 15,,Classical
-1771,"Mozart, Wolfgang Amadeus",Symphony 12,,Classical
-1785,"Mozart, Wolfgang Amadeus",Concerto: piano 20,,Classical
-1784,"Mozart, Wolfgang Amadeus",Concerto: piano 19,,Classical
-1791,"Mozart, Wolfgang Amadeus",Concerto: piano 27,,Classical
-1786,"Mozart, Wolfgang Amadeus",Concerto: piano 23,,Classical
-1784,"Mozart, Wolfgang Amadeus",Concerto: piano 17,,Classical
-1786,"Mozart, Wolfgang Amadeus",Concerto: piano 25,,Classical
-1785,"Mozart, Wolfgang Amadeus",Concerto: piano 22,,Classical
-1786,"Mozart, Wolfgang Amadeus",Concerto: piano 24,,Classical
-1785,"Mozart, Wolfgang Amadeus",Concerto: piano 21,,Classical
-1775,"Mozart, Wolfgang Amadeus",Concerto: violin 3,,Classical
-1791,"Mozart, Wolfgang Amadeus",Concerto: clarinet ,,Classical
-1777,"Mozart, Wolfgang Amadeus",Concerto: oboe,,Classical
-1779,"Mozart, Wolfgang Amadeus",Concerto: Sinfonia concertante,,Classical
-1774,"Mozart, Wolfgang Amadeus",Sonatas,,Classical
-2014,Run The Jewels,Run The Jewels 2,,Rap
-2016,Run The Jewels,Run The Jewels 3,,Rap
-2020,Run The Jewels,Run The Jewels 4,,Rap
+Date,Artist,Album,Genre
+1845,"Mendelssohn, Felix","Concerto: violin (Previn, 2010; Haitnik, 1984; Blech, 2000)",Classical
+1829,"Mendelssohn, Felix",Piano: Lieder ohne Worte ,Classical
+1888,"Mahler, Gustave","Symphony 2 ""Resurrection"" (Walter, 2019; Bernstein, 1964)",Classical
+1901,"Mahler, Gustave","Symphony 5 (Boulez, 1997)",Classical
+1903,"Mahler, Gustave","Symphony 6 ""Tragic"" (Zander, 2017)",Classical
+1908,"Mahler, Gustave","Symphony 9 (Gilbert, 2009)",Classical
+1910,"Mahler, Gustave","Symphony 10 (Abbado, 2021)",Classical
+1908,"Mahler, Gustave","Das Lied von der Erde (Bernstein, 1974)",Classical
+1799,"Beethoven, Ludwig van","Symphony all (Gardiner, 1994; Harnoncourt, 1991)",Classical
+1803,"Beethoven, Ludwig van","Symphony 3 ""Eroica"" (Gardiner, 1994; Karajan, 1993; Halasz, 1995; Bernstein, 1953; Celibidache, 1999)",Classical
+1807,"Beethoven, Ludwig van","Symphony 5 ""Fate"" (Zander, 1999; Gardiner, 1994; Karajan, 1984)",Classical
+1807,"Beethoven, Ludwig van","Symphony 6 ""Pastoral"" (Bohm, 1995)",Classical
+1811,"Beethoven, Ludwig van","Symphony 7 (Zander, 1999)",Classical
+1822,"Beethoven, Ludwig van","Symphony 9 ""Choral"" (Zander, 2018)",Classical
+1795,"Beethoven, Ludwig van","Concerto: piano 1, 2, 4 (Golschmann & Gould, 1957)",Classical
+1793,"Beethoven, Ludwig van","Trios: piano 1-7 (Barenboim & du Pre & Zuckerman, 1970)",Classical
+1788,"Beethoven, Ludwig van","Concerto: piano 2 (Bernstein & Gould, 1957)",Classical
+1800,"Beethoven, Ludwig van","Concerto: piano 3 (Bernstein & Gould, 1957; Bernstein & Zimmerman, 1993)",Classical
+1804,"Beethoven, Ludwig van",Concerto: piano 4,Classical
+1809,"Beethoven, Ludwig van","Concerto: piano 5 (Stokowski & Gould, 1957)",Classical
+1806,"Beethoven, Ludwig van","Concerto: violin (Previn & Perlman, 2010; Karajan & Mutter, 1980)",Classical
+1813,"Beethoven, Ludwig van",Wellington's Victory,Classical
+1819,"Beethoven, Ludwig van","Mass: ""Missa Solemnis"" (Gardiner, 1990)",Classical
+1782,"Beethoven, Ludwig van","Sonatas: for violin and piano (Perlman & Ashkenazy, 1977)",Classical
+1725,"Bach, Johann Sebastian ",Cantatas,Classical
+1724,"Bach, Johann Sebastian ","Mass: Mass in B minor (Klemperer, 2002)",Classical
+1724,"Bach, Johann Sebastian ","Mass: St John Passion (Gardiner, 1986)",Classical
+1738,"Bach, Johann Sebastian ","Concerto: keyboard 1, 3, 5, 7 (Golschmann & Gould, 1967)",Classical
+1717,"Bach, Johann Sebastian ","Concerto: violin 1, 2 (Barenboim, 1986)",Classical
+1731,"Bach, Johann Sebastian ","Concerto: two violins (Barenboim & Feifetz, 1957)",Classical
+1720,"Bach, Johann Sebastian ",Inventions and sinfonias,Classical
+1722,"Bach, Johann Sebastian ",French Suites,Classical
+1722,"Bach, Johann Sebastian ",Well-Tempered Clavier,Classical
+1710,"Bach, Johann Sebastian ",Preludes and Fugues,Classical
+1713,"Bach, Johann Sebastian ",Piano concertos (concerto for solo keyboard),Classical
+1741,"Bach, Johann Sebastian ",Goldberg Variations,Classical
+1720,"Bach, Johann Sebastian ",Cello suites,Classical
+1725,"Bach, Johann Sebastian ",Harpischord concertos,Classical
+1721,"Bach, Johann Sebastian ","Brandenburg concertos (Abbado, 2008)",Classical
+1713,"Bach, Johann Sebastian ",Canons,Classical
+1768,"Mozart, Wolfgang Amadeus",Mass: Missa Brevis ,Classical
+1791,"Mozart, Wolfgang Amadeus","Requiem (Gardiner, 1987)",Classical
+1785,"Mozart, Wolfgang Amadeus","Opera: The Marriage of Figaro (Mackerras, 1995)",Classical
+1787,"Mozart, Wolfgang Amadeus",Opera: Don Giovanni,Classical
+1788,"Mozart, Wolfgang Amadeus","Symphony 41 ""Jupiter"" (Fischer, 2014; Rattle, 2017)",Classical
+1773,"Mozart, Wolfgang Amadeus","Symphony 25 (Bernstein, 1990)",Classical
+1786,"Mozart, Wolfgang Amadeus","Symphony 38 ""Prague""",Classical
+1788,"Mozart, Wolfgang Amadeus","Symphony 39, 40 (Rattle, 2017)",Classical
+1788,"Mozart, Wolfgang Amadeus",Symphony 39,Classical
+1774,"Mozart, Wolfgang Amadeus",Symphony 29,Classical
+1778,"Mozart, Wolfgang Amadeus","Symphony 31, 38 (Marriner, 1991)",Classical
+1782,"Mozart, Wolfgang Amadeus",Symphony 35,Classical
+1783,"Mozart, Wolfgang Amadeus",Symphony 36,Classical
+1771,"Mozart, Wolfgang Amadeus",Symphony 11,Classical
+1783,"Mozart, Wolfgang Amadeus","Mass: Great Mass (Gardiner, 1987)",Classical
+1772,"Mozart, Wolfgang Amadeus",Symphony 15,Classical
+1771,"Mozart, Wolfgang Amadeus",Symphony 12,Classical
+1785,"Mozart, Wolfgang Amadeus",Concerto: piano 20,Classical
+1784,"Mozart, Wolfgang Amadeus",Concerto: piano 19,Classical
+1791,"Mozart, Wolfgang Amadeus",Concerto: piano 27,Classical
+1786,"Mozart, Wolfgang Amadeus",Concerto: piano 23,Classical
+1784,"Mozart, Wolfgang Amadeus",Concerto: piano 17,Classical
+1786,"Mozart, Wolfgang Amadeus",Concerto: piano 25,Classical
+1785,"Mozart, Wolfgang Amadeus",Concerto: piano 22,Classical
+1786,"Mozart, Wolfgang Amadeus",Concerto: piano 24,Classical
+1785,"Mozart, Wolfgang Amadeus",Concerto: piano 21,Classical
+1775,"Mozart, Wolfgang Amadeus",Concerto: violin 3,Classical
+1791,"Mozart, Wolfgang Amadeus","Concerto: clarinet (Vonk, 1990)",Classical
+1781,"Mozart, Wolfgang Amadeus","Serenades (Karajan, 1982)",Classical
+1777,"Mozart, Wolfgang Amadeus",Concerto: oboe,Classical
+1779,"Mozart, Wolfgang Amadeus",Concerto: Sinfonia concertante,Classical
+1774,"Mozart, Wolfgang Amadeus","Piano: sonatas (Pires, 2006)",Classical
+2014,Run The Jewels,Run The Jewels 2,Rap
+2016,Run The Jewels,Run The Jewels 3,Rap
+2020,Run The Jewels,Run The Jewels 4,Rap
+1870,"Brahms, Johannes","Waltzes (Backhaus, 2006)",Classical
+1858,"Brahms, Johannes","Concerto: piano 1 (Mehta, & Rubinstein, 1976; Haitnik & Ashkenazy, 1982",Classical
+1881,"Brahms, Johannes","Concerto: piano 2 (Toscanini & Horowitz, 1946)",Classical
+1876,"Brahms, Johannes","Symphony all (Karajan, 1987)",Classical
+1877,"Brahms, Johannes","Symphony 2 (Jarvi, 2017; Bernstein, 1962; Celibidache, 1999)",Classical
+1885,"Brahms, Johannes","Symphony 4 (Kleiber, 1981; Bernstein, 1962; Celibidache, 1999)",Classical
+1892,"Brahms, Johannes","Piano: Fantasias (Kissin, 1991)",Classical
+1878,"Brahms, Johannes","Concerto: violin (Giulini & Perlman, 2015; Blech & Kreisler, 2000)",Classical
+1926,"Puccini, Giocomo","Opera: Turandot (Mehta & Sutherland & Pavarotti, 1973",Classical
+1902,"Rachmaninov, Sergei ",Lilacs (Ashkenazy),Classical
+1888,"Rimsky-Korsakov, Nikolai","Scheherazade (Stokowski, 2015)",Classical
+1866,"Bruch, Max","Concerto: violin 1 (Haitnik & Perlman, 1984)",Classical
+1830,"Chopin, Frederic ","Concerto: piano 1, 2 (Skrowaczewski & Rubenstein, 2005)",Classical
+1919,"Elgar, Edward","Concerto: cello (Barenboim & du Pre, 1995)",Classical
+1741,"Handel, George Frideric","Messiah (Gardiner, 1983)",Classical
+1819,"Schubert, Franz","Quintet: piano ""Trout"" (Ax & Ma & Young, 1996)",Classical
+1815,"Schubert, Franz","Piano: sonatas (Kempff, 1988; Brendel, 1989)",Classical
+1813,"Schubert, Franz","Symphony all (Abbado, 1988)",Classical
+1816,"Schubert, Franz","Symphony 5 (Bohm, 1995)",Classical
+1825,"Schubert, Franz","Symphony 9 (Furtwangler, 2010)",Classical
+1823,"Schubert, Franz",Auf dem Wasser zu ... (Liszt trans.)(Kissin),Classical
+1875,"Tchaikovsky, Pyotr Ilyich","Concerto: piano 1 (Karajan & Richter, 1987)",Classical
+1878,"Tchaikovsky, Pyotr Ilyich","Concerto: violin (Ormandy & Perlman, 2015)",Classical
+1893,"Tchaikovsky, Pyotr Ilyich","Symphony 6 ""Pathetique"" (Bernstein, 1953)",Classical
+1888,"Tchaikovsky, Pyotr Ilyich","Symphony 5 (Jansons, 1984)",Classical
+1882,"Tchaikovsky, Pyotr Ilyich","Trio: piano (Perlman & Harrell & Ashkenazy, 2012; Piatigorsky & Rubenstein & Feifetz & Piatigorsky, 1950)",Classical
