@@ -120,6 +120,7 @@ a:visited {
 .content {
   max-height: 1000px;
   overflow-y: auto;
+  overflow-x: hidden;
   transition: max-height 0.3s ease-out;
   margin-top: 10px;
   display: block;
@@ -238,6 +239,7 @@ a:visited {
 .scroll-log {
   max-height: 400px;
   overflow-y: auto;
+  overflow-x: hidden;
   margin-bottom: 24px;
   padding-right: 8px;
 }
@@ -345,7 +347,7 @@ a:visited {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 60px auto;
   max-width: 600px;
 }
 
