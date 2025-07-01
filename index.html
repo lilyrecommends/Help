@@ -53,6 +53,72 @@
         margin-top: 10px;
         font-family: "Times New Roman", serif;
       }
+      /* Continuous scrollable column styles */
+      .floating-column-container {
+        max-width: 650px;
+        margin: 40px auto 0 auto;
+        padding: 0 20px;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .floating-item-single {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 32px auto;
+        opacity: 0;
+        transition: opacity 0.8s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .floating-item-single.visible {
+        opacity: 1;
+      }
+      .floating-item-single img {
+        display: block;
+        width: 100%;
+        max-width: 600px;
+        min-width: 300px;
+        height: auto;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        margin: 0 auto 12px auto;
+      }
+      .floating-item-single .floating-text {
+        background: rgba(255,255,255,0.97);
+        color: #222;
+        font-family: 'Times New Roman', serif;
+        font-size: 18px;
+        border-radius: 0;
+        padding: 28px 32px;
+        min-width: 300px;
+        max-width: 600px;
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: none;
+        line-height: 1.5;
+        margin: 0 auto 12px auto;
+        border: 1.5px dotted #bbb;
+      }
+      @media (max-width: 700px) {
+        .floating-column-container {
+          max-width: 98vw;
+          padding: 0 2vw;
+        }
+        .floating-item-single img, .floating-item-single .floating-text {
+          max-width: 98vw;
+          min-width: 0;
+          padding: 16px 6vw;
+        }
+      }
+      .floating-text .p4 { text-align: right !important; }
+      .floating-text .p1, .floating-text .p2, .floating-text .p3 { text-align: justify !important; }
+      .floating-text p { text-indent: 2em; }
     </style>
   </head>
   <body>
@@ -76,16 +142,12 @@
           <a href="lessons.html">Lessons</a>
           <a href="look.html">Look</a>
         </div>
-        <div class="main-section-container">
-          <div class="main-section">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6iE3EA0fnMIVcJO6AOi3tS?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div>
-        </div>
       </div>
+      <div class="floating-column-container" id="floating-column-container"></div>
     </div>
 
-         <script>
-       const correctPassword = "goaway";
+    <script>
+      const correctPassword = "goaway";
       
       // Check if user has already entered password in this session
       if (sessionStorage.getItem('authenticated') === 'true') {
@@ -114,6 +176,131 @@
       document.getElementById('password-input').addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
           checkPassword();
+        }
+      });
+
+      // Continuous scrollable column system
+      const CONT_GALLERY_JSON = 'index/gallery.json';
+      const CONT_IMAGE_EXTS = ['jpg','jpeg','png','gif','webp'];
+      const CONT_TEXT_EXTS = ['html'];
+      const YOUTUBE_TYPE = 'youtube';
+      let contGalleryItems = [];
+
+      async function fetchContGallery() {
+        try {
+          const res = await fetch(CONT_GALLERY_JSON);
+          if (!res.ok) throw new Error('Failed to fetch gallery.json');
+          contGalleryItems = await res.json();
+          console.log('Loaded gallery items:', contGalleryItems);
+        } catch (e) {
+          console.error('Error loading gallery.json:', e);
+          contGalleryItems = [];
+        }
+      }
+
+      function contGetFileType(item) {
+        if (item.type === YOUTUBE_TYPE && item.url) return 'youtube';
+        if (item.filename) {
+          const ext = item.filename.split('.').pop().toLowerCase();
+          if (CONT_IMAGE_EXTS.includes(ext)) return 'image';
+          if (CONT_TEXT_EXTS.includes(ext)) return 'text';
+        }
+        return 'unknown';
+      }
+
+      async function renderContGallery() {
+        const container = document.getElementById('floating-column-container');
+        container.innerHTML = '';
+        if (!contGalleryItems.length) {
+          container.innerHTML = '<div style="text-align:center;color:#888;">No gallery items to display.</div>';
+          return;
+        }
+        for (let i = 0; i < contGalleryItems.length; i++) {
+          const itemData = contGalleryItems[i];
+          const type = contGetFileType(itemData);
+          let el = document.createElement('div');
+          el.className = 'floating-item-single';
+          if (type === 'image') {
+            let img = document.createElement('img');
+            img.src = 'index/' + itemData.filename;
+            img.alt = '';
+            img.onerror = function() { console.error('Image failed to load:', img.src); };
+            el.appendChild(img);
+          } else if (type === 'text') {
+            let textDiv = document.createElement('div');
+            textDiv.className = 'floating-text';
+            try {
+              const txt = await fetch('index/' + itemData.filename).then(r => r.text());
+              let content = txt;
+              const match = txt.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+              if (match) content = match[1];
+              textDiv.innerHTML = content.trim();
+              el.appendChild(textDiv);
+            } catch (e) {
+              console.error('Failed to load or parse HTML file:', itemData.filename, e);
+            }
+          } else if (type === 'youtube') {
+            let iframe = document.createElement('iframe');
+            iframe.src = itemData.url;
+            iframe.width = '100%';
+            iframe.height = '338';
+            iframe.style.maxWidth = '600px';
+            iframe.style.minWidth = '300px';
+            iframe.style.aspectRatio = '16/9';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            iframe.allowFullscreen = true;
+            iframe.frameBorder = '0';
+            iframe.style.display = 'block';
+            iframe.style.margin = '0 auto 12px auto';
+            el.appendChild(iframe);
+          } else if (type === 'soundcloud') {
+            let iframe = document.createElement('iframe');
+            iframe.src = itemData.url;
+            iframe.width = '100%';
+            iframe.height = '166';
+            iframe.style.maxWidth = '600px';
+            iframe.style.minWidth = '300px';
+            iframe.allow = 'autoplay';
+            iframe.frameBorder = 'no';
+            iframe.scrolling = 'no';
+            iframe.style.display = 'block';
+            iframe.style.margin = '0 auto 12px auto';
+            el.appendChild(iframe);
+          } else if (type === 'spotify') {
+            let iframe = document.createElement('iframe');
+            iframe.src = itemData.url;
+            iframe.width = '100%';
+            iframe.height = '152';
+            iframe.style.maxWidth = '600px';
+            iframe.style.minWidth = '300px';
+            iframe.style.borderRadius = '12px';
+            iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.frameBorder = '0';
+            iframe.loading = 'lazy';
+            iframe.style.display = 'block';
+            iframe.style.margin = '0 auto 12px auto';
+            el.appendChild(iframe);
+          } else {
+            console.warn('Unsupported file type for item:', itemData);
+          }
+          container.appendChild(el);
+        }
+        // Fade-in effect as items enter viewport
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.floating-item-single').forEach(el => observer.observe(el));
+      }
+
+      window.addEventListener('load', async () => {
+        await fetchContGallery();
+        if (contGalleryItems.length) {
+          renderContGallery();
         }
       });
     </script>
