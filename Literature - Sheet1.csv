@@ -1,33 +1,126 @@
 Date,Author,Title,Hyperlink,DDC
-1785,"Kant, Immanuel",Fundamental Principles of the Metaphysic of Morals (tr. Thomas Kingsmill Abbott),https://www.gutenberg.org/cache/epub/5682/pg5682-images.html,100
-1787,"Kant, Immanuel",The Critique of Pure Reason (tr. Thomas Kingsmill Abbott),https://www.gutenberg.org/cache/epub/5683/pg5683-images.html,100
-1871,"Emerson, Ralph Waldo",The Conduct of Life,https://www.gutenberg.org/cache/epub/39827/pg39827-images.html,100
-1953,"Abrams, M. H.",The Mirror and the Lamp: Romantic Theory and the Critical Tradition,https://archive.org/details/mirrorlampromant00abrarich/page/7/mode/1up,809
-1895,"Arnold, Matthew",Selected Poems of Matthew Arnold,,821
-1898,"Addison, Joseph",Essays of Joseph Addison,https://archive.org/details/in.ernet.dli.2015.95395/page/n13/mode/1up,824
-1320,"Alighieri, Dante",The Divine Comedy,,850
--44,Cicero,On Duties,,
-1836,"Emerson, Ralph Waldo","Essays (History, Self-Reliance, Friendship, Love, Heroism) ♥︎",https://www.gutenberg.org/cache/epub/2944/pg2944-images.html,
-1873,"Butler, Samuel",The Way of All Flesh,,
-1887,"Burke, Edmund",The Works of Edmund Burke: Volume I (A Vindication of Natural Society; An Essay on the Sublime and Beautiful),https://www.gutenberg.org/cache/epub/15043/pg15043-images.html,
-1891,"Carlyle, Thomas",Sartor Resartvs,,
-1892,"de Witt Hyde, William",Practical Ethics,,
-1900,"de Witt Hyde, William",The School Speaker and Reader,,
-1905,"de Witt Hyde, William",From Epicurus to Christ,,
-1906,"de Witt Hyde, William",The College Man and the College Woman,,
-1911,"de Witt Hyde, William",The Five Great Philosophies of Life,,
-1912,"Chesterton, G. K.",Manalive,,
-1913,"Croce, Benedetto",The Philosophy of Giambattista Vico,,
-1913,"de Witt Hyde, William","The Quest of the Best Insights into Ethics for Parents, Teachers, and Leaders of Boys",,
-1915,"Conrad, Joseph (arranged by Harriet M. Capes)",Wisdom and Beauty from Conrad: An Anthology,,
-1915,"Croce, Benedetto",What is living and what is dead of the philosophy of Hegel,,
-1916,"de Witt Hyde, William",Are you human?,,
-1918,"Cather, Willa",My Antonia,,
-1922,"Croce, Benedetto",Aesthetic: as science of expression and general linguistic,,
-1923,"Chesterton, G. K.",St. Francis of Assisi,,
-1939,"Chesterton, G. K.","Stories, Essays, & Poems",,
-1946,"De La Mare, Walter",Collected Poems,,
-1948,"Berenson, Bernard",Aesthetics and History,https://archive.org/details/in.ernet.dli.2015.166094,
-1966,"Bulgakov, Mikhail",Master and Margarita,https://archive.org/details/mastermargarita0000unse,
-1968,"Clausewitz, Carl von",On War,,
-1971,"Carlyle, Thomas",On Great Men,,
+-300,Epicurus,Lettres et maximes,,LETT
+-44,Cicero,On Duties,,PHIL
+180,"Laertius, Diogenes",The Loeb Classical Library [185]: Lives of Eminent Philosophers II,,BIOG
+180,"Laertius, Diogenes",The Loeb Classical Library [184]: Lives of Eminent Philosophers I,,BIOG
+524,"Chadwick, Henry","Boethius: the Consolations of Music, Logic, Theology, and Philosophy",https://archive.org/details/boethiusconsolat0000chad/page/n5/mode/1up,PHIL
+1320,"Alighieri, Dante",The Divine Comedy,,POET
+1509,"Erasmus, Desiderius",Erasmus on his times,,ESSA
+1509,"Erasmus, Desiderius",In Praise of Folly,,ESSA
+1590,"Donne, John",John Donne: A Selection of His Poetry,,POET
+1604,"Greg, Walter Wilson",Wit of a Woman,https://archive.org/details/witofwoman160400greg/page/n21/mode/2up,DRAM
+1719,"Defoe, Daniel",Robinson Crusoe,,LITE
+1742,"Fielding, Henry",Joseph Andrews,,LITE
+1749,"Fielding, Henry",Tom Jones,,LITE
+1759,"Johnson, Samuel","Rasselas, Poems, and Selected Prose (including letters and biographies)",,ESSA
+1776,"Gibbon, Edward",The Decline and Fall of the Roman Empire,,HIST
+1778,"Gibbon, Edward",Autobiography of Edward Gibbon,,BIOG
+1785,"Kant, Immanuel",Fundamental Principles of the Metaphysic of Morals (tr. Thomas Kingsmill Abbott),https://www.gutenberg.org/cache/epub/5682/pg5682-images.html,PHIL
+1787,"Kant, Immanuel",The Critique of Pure Reason (tr. Thomas Kingsmill Abbott),https://www.gutenberg.org/cache/epub/5683/pg5683-images.html,PHIL
+1794,"Fichte, Johann Gottlieb","Fichte, early philsophical writings",,PHIL
+1807,"Hegel, Georg Wilhelm Friedrich",Phenomenology of Spirit,,PHIL
+1808,"Goethe, Johann Wolfgang von",Faust ,,LITE
+1831,"Carlyle, Thomas",Sartor Resartus: The Life and Opinions of Herr Teufelsdrock,https://www.gutenberg.org/cache/epub/1051/pg1051-images.html,ESSA
+1835,"de Tocqueville, Alexis",Democracy in America,,HIST
+1835,"Isaacson, Walter",The Wise Men,,HIST
+1835,"Gogol, Nikolai Vasilevich",Taras Bulba,,LITE
+1835,"Gogol, Nikolai Vasilevich",Diary of a Madman; The Nose; The Overcoat; How Ivan Ivanovich Quarrelled with Ivan Nikiforovich; Ivan Fyodorovich Shponka and his Aunt,,LITE
+1836,"Emerson, Ralph Waldo","Essays (History, Self-Reliance, Friendship, Love, Heroism)",https://www.gutenberg.org/cache/epub/2944/pg2944-images.html,ESSA
+1841,"Carlyle, Thomas","On Heroism, Hero-Worship, and the Heroic in History",https://www.gutenberg.org/cache/epub/1091/pg1091-images.html,ESSA
+1842,"Dickens, Charles",American Notes; Pictures from Italy,,ESSA
+1842,"Gogol, Nikolai Vasilevich",Dead Souls,,LITE
+1845,"Douglass, Frederick",Narrative of the Life of Frederick Douglass,,BIOG
+1845,"Heidegger, Martin",Basic writings from 'Being and time' (1927) to 'The task of thinking' (1964),,PHIL
+1846,"Herbert, George",The Works of George Herbert in Prose and Verse,,POET
+1850,"Emerson, Ralph Waldo",Representative Men,https://www.gutenberg.org/cache/epub/6312/pg6312-images.html,ESSA
+1850,"Emerson, Ralph Waldo",Representative Men,,ESSA
+1852,"Hawthorne, Nathaniel",The Blithedale Romance,,LITE
+1858,"Holmes, O. W.",The Autocrat of the Breakfast Table,,LITE
+1859,"Khayyam, Omar",The Rubaiyat of Omar Khayyam,,LITE
+1861,"Holmes, Oliver Wendell",Elsie Venner,,LITE
+1871,"Emerson, Ralph Waldo",The Conduct of Life,https://www.gutenberg.org/cache/epub/39827/pg39827-images.html,PHIL
+1873,"Butler, Samuel",The Way of All Flesh,,BIOG
+1877,"Lamb, Charles",The Essays of Elia,,ESSA
+1877,"Kingston, W. H. G.",Clara Maynard or True & False,,LITE
+1880,"Frith, Henry",How to Read Character in Handwriting or the Grammar of Graphology,https://archive.org/details/b28106076/mode/1up,PSYC
+1884,"Caryle, Thomas","The Correspondence of Thomas Carlyle and Ralph Waldo Emerson, 1834-1872",https://archive.org/details/correspondenceof02carl/page/172/mode/2up,LETT
+1885,"Lotze, Hermann",Microcosmus: an Essay Concerning Man and his Relation to the World,https://archive.org/details/microcosmusessay01lotzuoft/mode/1up,ESSA
+1885,"Abbott, Edwin Abbott",Flatland: a Romance of Many Dimensions,https://archive.org/details/flatlandromanceo00abbouoft,LITE
+1887,"Burke, Edmund",The Works of Edmund Burke: Volume I (A Vindication of Natural Society; An Essay on the Sublime and Beautiful),https://www.gutenberg.org/cache/epub/15043/pg15043-images.html,ESSA
+1891,"George, Henry",The Condition of Labour: An Open Letter to Pope Leo XIII,,ECON
+1892,"de Witt Hyde, William",Practical Ethics,https://archive.org/details/practicalethicsb00hyde/page/n5/mode/2up,ESSA
+1892,"Goethe, Johann Wolfgang von",Maxims and Reflections,,ESSA
+1893,"George, Henry","A Perplexed Philosopher... being An Examination of Mr. Herbert Spencer's Various Utterances on the Land Question, with Some Incidental Reference to His Synthetic Philosophy",,ESSA
+1894,"Abbott, Joseph",The Life of Napoleon Bonaparte,https://archive.org/details/in.ernet.dli.2015.36834/mode/1up,BIOG
+1895,"Frith, Henry","The Romance of Engineering; the Stories of the Highway, the Waterway, the Railway, and the Subway",https://archive.org/details/romanceengineer00fritgoog/page/n3/mode/1up,ENGI
+1895,"Arnold, Matthew",Selected Poems of Matthew Arnold,,POET
+1898,"Addison, Joseph",Essays of Joseph Addison,https://archive.org/details/in.ernet.dli.2015.95395/page/n13/mode/1up,ESSA
+1898,"Jerome, Jerome K.",The Second Thoughts of An Idle Fellow,,ESSA
+1900,"de Witt Hyde, William",The School Speaker and Reader,https://archive.org/details/schoolspeakerrea00hyderich,ESSA
+1900,"Dryden, John",Essays Vol. I,,ESSA
+1901,"Lenin, Vladimir",What is to be Done?,,ESSA
+1901,"Kingston, Alfred",The Romance of A Hundred Years: Remarkable chapters in the social and public life of the nineteenth century,,HIST
+1902,"Gorky, Maxim",The Lower Depths,,LITE
+1903,"Lamb, Charles & Mary",Tales from Shakespeare,,LITE
+1905,"de Witt Hyde, William",From Epicurus to Christ,https://archive.org/details/in.ernet.dli.2015.264969,ESSA
+1905,"de Witt Hyde, William",Great Ideas of the Bible,https://archive.org/details/in.ernet.dli.2015.264975/page/n10/mode/1up,ESSA
+1906,"de Witt Hyde, William",The College Man and the College Woman,https://archive.org/details/collegemancolleg00hyde/page/n7/mode/2up,ESSA
+1908,"de Witt Hyde, William",Self-Measurement: A Scale of Human Values with Directions for Personal Application,https://archive.org/details/selfmeasurement04hydegoog/page/n8/mode/1up,ESSA
+1909,"Croce, Benedetto",Aesthetic: As Science of Expression and General Linguistic,,ESSA
+1910,"Lankester, Sir Ray",Science From an Easy Chair,,SCIE
+1911,"de Witt Hyde, William",The Five Great Philosophies of Life,https://archive.org/details/in.ernet.dli.2015.88615,ESSA
+1912,"Chesterton, G. K.",Manalive,,ESSA
+1913,"Gorky, Maxim",Autobiography of Maxim Gorky,,BIOG
+1913,"de Witt Hyde, William","The Quest of the Best: Insights Into Ethics for Parents, Teachers and Leaders of Boys",https://archive.org/details/questbestinsigh00hydegoog/page/n3/mode/1up,ESSA
+1913,"de Witt Hyde, William","The Quest of the Best Insights into Ethics for Parents, Teachers, and Leaders of Boys",,ESSA
+1913,"Croce, Benedetto",The Philosophy of Giambattista Vico,,PHIL
+1914,"Gardiner, A. G.","Prophets, Priests, and Kings",,ESSA
+1914,"Joyce, James",Dubliners,,LITE
+1915,"Croce, Benedetto",What is living and what is dead of the philosophy of Hegel,,ESSA
+1915,"Conrad, Joseph (arranged by Harriet M. Capes)",Wisdom and Beauty from Conrad: An Anthology,,LITE
+1916,"de Witt Hyde, William",Are you human?,https://archive.org/details/areyouhuman00hyderich,ESSA
+1918,"Cather, Willa",My Antonia,,LITE
+1923,"Chesterton, G. K.",St. Francis of Assisi,,BIOG
+1923,"Gibran, Kahlil",The Prophet,,LITE
+1925,"Hendrick, Burton J.",The Life and Letters of Walter H. Page,,LETT
+1925,"Gorky, Maxim",The Artamonovs,,LITE
+1926,"Ford, Henry",The Great To-Day and Greater Future,,ECON
+1927,"Dunne, J. W.",An Experiment with Time,,ESSA
+1928,Ilf & Petrov,The Twelve Chairs,,LITE
+1930,"Kant, Immanuel",Lectures on ethics ,,PHIL
+1933,"Housman, A. E.",The Name and Nature of Poetry,,POET
+1939,"Chesterton, G. K.","Stories, Essays, & Poems",,COLL
+1939,"Ellis, Havelock","Thinker's Library [74]: Morals, Manners, and Men",,ESSA
+1939,"Joyce, James",Finnegans Wake,,LITE
+1941,"Kierkegaard, Søren",Training in Christianity and the Edifying Discourse which 'Accompanied' It,,PHIL
+1944,"Joyce, James",Stephen Hero,,LITE
+1946,"De La Mare, Walter",Collected Poems,,POET
+1947,"Frye, Northrop",A Fearful Symmetry,,CRIT
+1948,"Berenson, Bernard",Aesthetics and History,https://archive.org/details/in.ernet.dli.2015.166094,ESSA
+1949,"Forster, E. M.",Aspects of the Novel,,CRIT
+1950,"Esmond, Henry; Thackeray, W. M. (ed)","The History of Henry Esmond, Esq.",,BIOG
+1953,"Abrams, M. H.",The Mirror and the Lamp: Romantic Theory and the Critical Tradition,https://archive.org/details/mirrorlampromant00abrarich/page/7/mode/1up,CRIT
+1955,"Joyce, James",Ulysses,,LITE
+1958,"Lewis, C. S.",The Allegory of Love,https://archive.org/details/allegoryofloveby0000csle,CRIT
+1964,"Kafka, Franz",The Diaries of Franz Kafka,,LETT
+1964,"Joyce, James",A Portrait of the Artist as a Young Man,,LITE
+1966,"Bulgakov, Mikhail",Master and Margarita,https://archive.org/details/mastermargarita0000unse,LITE
+1966,"Leopardi, Giacomo",Selected Prose and Poetry,,POET
+1968,"Clausewitz, Carl von",On War,,MILI
+1969,"Kojeve, Alexandre; (Assembled by Bloom, Allan)",Introduction to the Reading of Hegel: Lectures on the Phenomology of Spirit,,PHIL
+1971,"Frye, Northrop",Anatomy of Criticism; Four Essays,https://archive.org/details/anatomyofcritici00fryerich,CRIT
+1971,"Grossmith, George and Weedon",The Diary of a Nobody,,LITE
+1971,"Kierkegaard, Søren",Concluding Unscientific Postscript,,PHIL
+1975,"Joyce, James",Selected letters of James Joyce,,LETT
+1976,"Derrida, Jacques",Of Grammatology,,LING
+1977,"Horne, Alistair","A Savage War of Peace: Algeria, 1954-1962",,HIST
+1979,"Hofstadter, Douglas R.","Gödel, Escher, Bach: an Eternal Golden Braid",,ESSA
+1983,"Karnow, Stanley",Vietnam: A History,,HIST
+1985,"Garraty, John A.; Gay, Peter (Ed.)",The University History of the World,,HIST
+1985,"Kundera, Milan",The Unbearable Being of Lightness,,LITE
+1987,"Gleick, James",Chaos,,HIST
+1992,"Kierkegaard, Søren",Either/Or; A Fragment of Life,,PHIL
+1993,"Dunn, Stephen",Looking for Holes in the Ceiling,,POET
+1994,"Kissinger, Henry",Diplomacy,,HIST
+2002,"Jenkins, Roy",Churchill: A Biography,,BIOG
+2005,"Jackson, H. J.",Romantic Readers: the Evidence of Marginalia,,CRIT
