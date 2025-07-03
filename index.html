@@ -65,6 +65,7 @@
         justify-content: flex-start;
       }
       .floating-item-single {
+        position: relative;
         width: 100%;
         max-width: 100%;
         margin: 0 auto 32px auto;
@@ -74,6 +75,13 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+      }
+      .image-overlay-wrapper {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 600px;
+        min-width: 300px;
       }
       .floating-item-single.visible {
         opacity: 1;
@@ -104,6 +112,41 @@
         line-height: 1.5;
         margin: 0 auto 12px auto;
         border: 1.5px dotted #bbb;
+      }
+      .image-hover-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        background: rgba(255,255,255,0.97);
+        color: #222;
+        font-family: 'Times New Roman', serif;
+        font-size: 18px;
+        border: 1.5px dotted #bbb;
+        box-sizing: border-box;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 20px 24px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: justify;
+      }
+      .image-hover-overlay .overlay-right {
+        text-align: right;
+        width: 100%;
+        margin-top: 18px;
+        margin-right: 8px;
+      }
+      .floating-item-single:hover .image-hover-overlay {
+        opacity: 1;
+        pointer-events: auto;
       }
       @media (max-width: 700px) {
         .floating-column-container {
@@ -221,11 +264,27 @@
           let el = document.createElement('div');
           el.className = 'floating-item-single';
           if (type === 'image') {
+            let wrapper = document.createElement('div');
+            wrapper.className = 'image-overlay-wrapper';
             let img = document.createElement('img');
             img.src = 'index/' + itemData.filename;
             img.alt = '';
             img.onerror = function() { console.error('Image failed to load:', img.src); };
-            el.appendChild(img);
+            wrapper.appendChild(img);
+            // Add overlay with scrollable text
+            let overlay = document.createElement('div');
+            overlay.className = 'image-hover-overlay';
+            overlay.innerHTML = itemData.caption || 'Image: ' + itemData.filename;
+            wrapper.appendChild(overlay);
+            el.appendChild(wrapper);
+            // Ensure overlay matches image height after image loads
+            img.addEventListener('load', function() {
+              overlay.style.height = img.offsetHeight + 'px';
+            });
+            // In case image is cached and already loaded
+            if (img.complete) {
+              overlay.style.height = img.offsetHeight + 'px';
+            }
           } else if (type === 'text') {
             let textDiv = document.createElement('div');
             textDiv.className = 'floating-text';
