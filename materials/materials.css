@@ -23,12 +23,12 @@ li {
     margin: 8px 0;
 }
 
-a {
-    color: #0066cc;
+a, a:link, a:visited {
+    color: #003300 !important;
     text-decoration: none;
 }
-
 a:hover {
+    color: #003300 !important;
     text-decoration: underline;
 }
 
