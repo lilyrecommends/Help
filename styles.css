@@ -142,9 +142,9 @@ a:visited {
 
 /* Table styles */
 .scroll-table {
-  max-height: 340px;
-  overflow-y: auto;
-  margin-bottom: 24px;
+  overflow-x: auto;
+  overflow-y: visible;
+  width: 100%;
 }
 
 .library-table {
@@ -251,6 +251,57 @@ a:visited {
 .scroll-log li {
   text-align: justify;
 }
+
+/* --- 2025 log table custom styles --- */
+.scroll-table table {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 900px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.scroll-table th, .scroll-table td {
+  width: 250px;
+  min-width: 250px;
+  max-width: 250px;
+  box-sizing: border-box;
+  border-bottom: 1.5px dotted #ccc;
+  border-right: 1.5px dotted #ccc;
+  padding: 6px 8px;
+  word-break: break-word;
+  background: #fff;
+}
+.scroll-table th:first-child, .scroll-table td:first-child {
+  width: 100px !important;
+  min-width: 100px !important;
+  max-width: 100px !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  border-left: 1.5px dotted #ccc;
+}
+.scroll-table tr:first-child th,
+.scroll-table tr:first-child td {
+  font-weight: bold !important;
+  text-align: center !important;
+  border-top: 1.5px dotted #ccc !important;
+}
+.scroll-table td:first-child,
+.scroll-table th:first-child {
+  font-weight: bold !important;
+  text-align: left !important;
+}
+.scroll-table th {
+  background: #fff;
+  font-weight: bold;
+}
+.scroll-table thead th {
+  text-align: center;
+}
+.scroll-table tbody th {
+  text-align: left;
+  font-weight: bold;
+}
+/* --- end 2025 log table custom styles --- */
 
 /* Mobile responsive design */
 @media screen and (max-width: 768px) {
